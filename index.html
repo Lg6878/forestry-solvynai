@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
@@ -9,166 +10,1007 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{width:100%;height:100%;overflow:hidden;background:#000;cursor:none;}
 #c{position:fixed;inset:0;z-index:0;}
-#cur{position:fixed;z-index:9999;pointer-events:none;width:8px;height:8px;border-radius:50%;background:#c4784a;top:0;left:0;transform:translate(-50%,-50%);box-shadow:0 0 10px rgba(196,120,74,.9);}
-#cur2{position:fixed;z-index:9998;pointer-events:none;width:26px;height:26px;border-radius:50%;border:1px solid rgba(196,120,74,.3);top:0;left:0;transform:translate(-50%,-50%);transition:left .08s,top .08s;}
-#logo{position:fixed;top:1.5rem;left:2rem;z-index:100;opacity:0;animation:aFI .8s ease .5s forwards;display:flex;align-items:center;gap:9px;}
-.lb{width:26px;height:26px;border-radius:6px;background:linear-gradient(135deg,#7a3a1e,#c4784a);display:flex;align-items:center;justify-content:center;font-size:.78rem;}
-.lt{font-family:'Noto Serif TC',serif;font-size:.7rem;font-weight:700;color:rgba(255,255,255,.72);line-height:1.3;}
-.lt span{display:block;font-size:.52rem;color:#c4784a;font-family:'Space Mono',monospace;letter-spacing:.06em;}
-#nav{position:fixed;right:1.8rem;top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:10px;}
-.nd{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.16);cursor:pointer;transition:all .3s;}
-.nd.on{background:#c4784a;height:15px;border-radius:2px;box-shadow:0 0 8px rgba(196,120,74,.6);}
-#scn{position:fixed;bottom:1.8rem;right:2rem;z-index:100;font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:.1em;color:rgba(255,255,255,.25);}
-#sh{position:fixed;bottom:1.8rem;left:50%;transform:translateX(-50%);z-index:100;opacity:0;animation:aFI .8s ease 1.2s forwards;display:flex;flex-direction:column;align-items:center;gap:6px;transition:opacity .5s;}
-#sh span{font-family:'Space Mono',monospace;font-size:.5rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);}
-.arr{width:12px;height:12px;border-right:1px solid rgba(255,255,255,.22);border-bottom:1px solid rgba(255,255,255,.22);transform:rotate(45deg);animation:aArr 1.6s ease-in-out infinite;}
-@keyframes aArr{0%,100%{opacity:.2;transform:rotate(45deg) translate(0,0);}50%{opacity:.7;transform:rotate(45deg) translate(3px,3px);}}
-#fade{position:fixed;inset:0;z-index:500;background:#000;pointer-events:none;opacity:0;transition:opacity .22s ease;}
-.panel{position:fixed;z-index:200;opacity:0;pointer-events:none;transition:opacity .5s ease,transform .5s cubic-bezier(.16,1,.3,1);}
+
+#cur{position:fixed;z-index:9999;pointer-events:none;width:8px;height:8px;
+border-radius:50%;background:#c4784a;top:0;left:0;
+transform:translate(-50%,-50%);box-shadow:0 0 10px rgba(196,120,74,.9);}
+#cur2{position:fixed;z-index:9998;pointer-events:none;width:26px;height:26px;
+border-radius:50%;border:1px solid rgba(196,120,74,.3);top:0;left:0;
+transform:translate(-50%,-50%);transition:left .08s,top .08s;}
+
+#logo{position:fixed;top:1.5rem;left:2rem;z-index:100;
+opacity:0;animation:aFI .8s ease .5s forwards;
+display:flex;align-items:center;gap:9px;}
+.lb{width:26px;height:26px;border-radius:6px;
+background:linear-gradient(135deg,#7a3a1e,#c4784a);
+display:flex;align-items:center;justify-content:center;font-size:.78rem;}
+.lt{font-family:‘Noto Serif TC’,serif;font-size:.7rem;font-weight:700;
+color:rgba(255,255,255,.72);line-height:1.3;}
+.lt span{display:block;font-size:.52rem;color:#c4784a;
+font-family:‘Space Mono’,monospace;letter-spacing:.06em;}
+
+#nav{position:fixed;right:1.8rem;top:50%;transform:translateY(-50%);
+z-index:100;display:flex;flex-direction:column;gap:10px;}
+.nd{width:4px;height:4px;border-radius:50%;
+background:rgba(255,255,255,.16);cursor:pointer;transition:all .3s;}
+.nd.on{background:#c4784a;height:15px;border-radius:2px;
+box-shadow:0 0 8px rgba(196,120,74,.6);}
+
+#scn{position:fixed;bottom:1.8rem;right:2rem;z-index:100;
+font-family:‘Space Mono’,monospace;font-size:.54rem;
+letter-spacing:.1em;color:rgba(255,255,255,.25);}
+
+#sh{position:fixed;bottom:1.8rem;left:50%;transform:translateX(-50%);
+z-index:100;opacity:0;animation:aFI .8s ease 1.2s forwards;
+display:flex;flex-direction:column;align-items:center;gap:6px;transition:opacity .5s;}
+#sh span{font-family:‘Space Mono’,monospace;font-size:.5rem;
+letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);}
+.arr{width:12px;height:12px;border-right:1px solid rgba(255,255,255,.22);
+border-bottom:1px solid rgba(255,255,255,.22);transform:rotate(45deg);
+animation:aArr 1.6s ease-in-out infinite;}
+@keyframes aArr{0%,100%{opacity:.2;transform:rotate(45deg) translate(0,0);}
+50%{opacity:.7;transform:rotate(45deg) translate(3px,3px);}}
+
+#fade{position:fixed;inset:0;z-index:500;background:#000;
+pointer-events:none;opacity:0;transition:opacity .22s ease;}
+
+/* ── PANELS ── */
+.panel{position:fixed;z-index:200;opacity:0;pointer-events:none;
+transition:opacity .5s ease,transform .5s cubic-bezier(.16,1,.3,1);}
 .panel.in{opacity:1;pointer-events:all;}
+
 .pr{top:50%;right:4%;transform:translateY(calc(-50% + 36px));}
 .pr.in{transform:translateY(-50%);}
 .pl{top:50%;left:4%;transform:translateY(calc(-50% + 36px));}
 .pl.in{transform:translateY(-50%);}
 .pc{top:50%;left:50%;transform:translate(-50%,calc(-50% + 28px));}
 .pc.in{transform:translate(-50%,-50%);}
-.card{background:rgba(5,3,1,.84);backdrop-filter:blur(22px);border:1px solid rgba(196,120,74,.16);border-radius:15px;padding:1.5rem 1.7rem;max-width:370px;box-shadow:0 24px 55px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.03);}
+
+/* ── CARD ── */
+.card{background:rgba(5,3,1,.84);backdrop-filter:blur(22px);
+border:1px solid rgba(196,120,74,.16);border-radius:15px;
+padding:1.5rem 1.7rem;max-width:370px;
+box-shadow:0 24px 55px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.03);}
 .card-wide{max-width:480px;}
-.tag{font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:.22em;text-transform:uppercase;color:#c4784a;margin-bottom:.7rem;display:flex;align-items:center;gap:7px;}
-.tag::before{content:'';width:11px;height:1px;background:#c4784a;}
-.h2{font-family:'Noto Serif TC',serif;font-size:clamp(1.15rem,1.9vw,1.75rem);font-weight:900;line-height:1.22;color:#fff;margin-bottom:.7rem;}
+
+/* ── TYPE ── */
+.tag{font-family:‘Space Mono’,monospace;font-size:.52rem;
+letter-spacing:.22em;text-transform:uppercase;color:#c4784a;
+margin-bottom:.7rem;display:flex;align-items:center;gap:7px;}
+.tag::before{content:’’;width:11px;height:1px;background:#c4784a;}
+.h2{font-family:‘Noto Serif TC’,serif;
+font-size:clamp(1.15rem,1.9vw,1.75rem);font-weight:900;
+line-height:1.22;color:#fff;margin-bottom:.7rem;}
 .h2 em{color:#5ddf8a;font-style:normal;}
 .h2 .rd{color:#e05555;}
 .h2 .gd{color:#f0c96e;}
 .bd{font-size:.77rem;line-height:1.85;color:rgba(255,255,255,.42);margin-bottom:.8rem;}
-.pi{display:flex;gap:.7rem;padding:.65rem .85rem;margin-bottom:.38rem;background:rgba(224,85,85,.055);border:1px solid rgba(224,85,85,.13);border-left:2px solid #e05555;border-radius:0 8px 8px 0;}
+
+/* ── PAIN ITEMS ── */
+.pi{display:flex;gap:.7rem;padding:.65rem .85rem;margin-bottom:.38rem;
+background:rgba(224,85,85,.055);border:1px solid rgba(224,85,85,.13);
+border-left:2px solid #e05555;border-radius:0 8px 8px 0;}
 .pi-ic{font-size:.9rem;flex-shrink:0;margin-top:2px;}
 .pi h4{font-size:.74rem;font-weight:700;color:rgba(255,255,255,.88);margin-bottom:.13rem;}
 .pi p{font-size:.65rem;color:rgba(255,255,255,.32);line-height:1.5;}
-.fi{display:flex;gap:.7rem;padding:.65rem .85rem;margin-bottom:.38rem;background:rgba(93,223,138,.045);border:1px solid rgba(93,223,138,.1);border-left:2px solid #5ddf8a;border-radius:0 8px 8px 0;transition:background .3s;}
+
+/* ── FEATURE ITEMS (green) ── */
+.fi{display:flex;gap:.7rem;padding:.65rem .85rem;margin-bottom:.38rem;
+background:rgba(93,223,138,.045);border:1px solid rgba(93,223,138,.1);
+border-left:2px solid #5ddf8a;border-radius:0 8px 8px 0;transition:background .3s;}
 .fi:hover{background:rgba(93,223,138,.08);}
-.fi-ic{width:26px;height:26px;border-radius:6px;background:rgba(93,223,138,.08);display:flex;align-items:center;justify-content:center;font-size:.82rem;flex-shrink:0;}
+.fi-ic{width:26px;height:26px;border-radius:6px;background:rgba(93,223,138,.08);
+display:flex;align-items:center;justify-content:center;font-size:.82rem;flex-shrink:0;}
 .fi h4{font-size:.74rem;font-weight:700;margin-bottom:.12rem;color:#fff;}
 .fi p{font-size:.65rem;color:rgba(255,255,255,.32);line-height:1.45;}
+
+/* ── GOLD NUMBERED LIST ── */
 .ni{display:flex;gap:.8rem;padding:.7rem 0;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:.1rem;}
 .ni:last-child{border-bottom:none;}
-.ni-num{width:28px;height:28px;border-radius:6px;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:.75rem;font-weight:700;color:#f0c96e;flex-shrink:0;}
+.ni-num{width:28px;height:28px;border-radius:6px;
+background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.3);
+display:flex;align-items:center;justify-content:center;
+font-family:‘Space Mono’,monospace;font-size:.75rem;font-weight:700;
+color:#f0c96e;flex-shrink:0;}
 .ni h4{font-size:.76rem;font-weight:700;color:#fff;margin-bottom:.15rem;}
 .ni p{font-size:.65rem;color:rgba(255,255,255,.35);line-height:1.5;}
 .ni .hl{color:#f0c96e;}
+
+/* ── 2-COL GRID ── */
 .gcol{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-top:.5rem;}
-.gitem{background:rgba(196,120,74,.06);border:1px solid rgba(196,120,74,.14);border-radius:9px;padding:.75rem .85rem;}
-.gitem h4{font-size:.72rem;font-weight:700;color:#fff;margin-bottom:.25rem;display:flex;align-items:center;gap:5px;}
+.gitem{background:rgba(196,120,74,.06);border:1px solid rgba(196,120,74,.14);
+border-radius:9px;padding:.75rem .85rem;}
+.gitem h4{font-size:.72rem;font-weight:700;color:#fff;margin-bottom:.25rem;
+display:flex;align-items:center;gap:5px;}
 .gitem p{font-size:.62rem;color:rgba(255,255,255,.32);line-height:1.5;}
+
+/* ── STATS ── */
 .sg{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-top:.7rem;}
-.sb{background:linear-gradient(135deg,rgba(196,120,74,.09),rgba(158,92,53,.04));border:1px solid rgba(196,120,74,.16);border-radius:10px;padding:.9rem .7rem;text-align:center;}
-.sn{font-family:'Space Mono',monospace;font-size:1.85rem;font-weight:700;color:#5ddf8a;line-height:1;margin-bottom:.2rem;}
+.sb{background:linear-gradient(135deg,rgba(196,120,74,.09),rgba(158,92,53,.04));
+border:1px solid rgba(196,120,74,.16);border-radius:10px;
+padding:.9rem .7rem;text-align:center;}
+.sn{font-family:‘Space Mono’,monospace;font-size:1.85rem;font-weight:700;
+color:#5ddf8a;line-height:1;margin-bottom:.2rem;}
 .sl{font-size:.58rem;color:rgba(255,255,255,.34);line-height:1.4;}
+
+/* ── HERO ── */
 #hero{text-align:center;padding:0 1.5rem;}
-.ht1{font-family:'Noto Serif TC',serif;font-size:clamp(1.8rem,3.8vw,3rem);font-weight:900;background:linear-gradient(135deg,#c9a84c,#f0c96e,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;margin-bottom:.3rem;}
-.ht1b{font-family:'Noto Serif TC',serif;font-size:clamp(1rem,2vw,1.5rem);font-weight:700;color:rgba(255,255,255,.55);margin-bottom:.4rem;letter-spacing:.05em;}
-.ht2{font-size:.7rem;color:rgba(255,255,255,.26);letter-spacing:.16em;font-family:'Space Mono',monospace;text-transform:uppercase;margin-bottom:1rem;}
-.hbadge{display:inline-flex;align-items:center;gap:6px;background:rgba(196,120,74,.07);border:1px solid rgba(196,120,74,.17);border-radius:50px;padding:5px 14px;font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:.08em;color:rgba(196,120,74,.7);}
-.bdot{width:5px;height:5px;border-radius:50%;background:#c4784a;animation:aBP 2.2s ease-in-out infinite;}
+.ht1{font-family:‘Noto Serif TC’,serif;
+font-size:clamp(1.8rem,3.8vw,3rem);font-weight:900;
+background:linear-gradient(135deg,#c9a84c,#f0c96e,#c9a84c);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+background-clip:text;line-height:1.1;margin-bottom:.3rem;}
+.ht1b{font-family:‘Noto Serif TC’,serif;
+font-size:clamp(1rem,2vw,1.5rem);font-weight:700;color:rgba(255,255,255,.55);
+margin-bottom:.4rem;letter-spacing:.05em;}
+.ht2{font-size:.7rem;color:rgba(255,255,255,.26);letter-spacing:.16em;
+font-family:‘Space Mono’,monospace;text-transform:uppercase;margin-bottom:1rem;}
+.hbadge{display:inline-flex;align-items:center;gap:6px;
+background:rgba(196,120,74,.07);border:1px solid rgba(196,120,74,.17);
+border-radius:50px;padding:5px 14px;
+font-family:‘Space Mono’,monospace;font-size:.54rem;
+letter-spacing:.08em;color:rgba(196,120,74,.7);}
+.bdot{width:5px;height:5px;border-radius:50%;background:#c4784a;
+animation:aBP 2.2s ease-in-out infinite;}
 @keyframes aBP{0%,100%{opacity:.4;}50%{opacity:1;box-shadow:0 0 6px #c4784a;}}
-.hmeta{margin-top:.9rem;font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:.1em;color:rgba(255,255,255,.2);text-transform:uppercase;}
-#closing{text-align:center;max-width:520px;position:relative;background:rgba(4,2,1,.82);backdrop-filter:blur(28px);border:1px solid rgba(196,120,74,.18);border-radius:20px;padding:2.2rem 2.6rem;box-shadow:0 0 60px rgba(196,120,74,.07),inset 0 1px 0 rgba(255,255,255,.04);}
-.cg{position:absolute;width:480px;height:480px;background:radial-gradient(circle,rgba(196,120,74,.12) 0%,transparent 68%);border-radius:50%;top:50%;left:50%;z-index:-1;pointer-events:none;animation:aBR 4s ease-in-out infinite;transform:translate(-50%,-50%);}
-@keyframes aBR{0%,100%{opacity:.45;transform:translate(-50%,-50%) scale(1);}50%{opacity:1;transform:translate(-50%,-50%) scale(1.25);}}
-.ch{font-family:'Noto Serif TC',serif;font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:900;color:#fff;line-height:1.18;margin-bottom:.85rem;text-shadow:0 2px 20px rgba(0,0,0,.5);}
-.ch .gd{background:linear-gradient(135deg,#c9a84c,#f0c96e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hmeta{margin-top:.9rem;font-family:‘Space Mono’,monospace;font-size:.54rem;
+letter-spacing:.1em;color:rgba(255,255,255,.2);text-transform:uppercase;}
+
+/* ── CLOSING ── */
+#closing{text-align:center;max-width:520px;position:relative;
+background:rgba(4,2,1,.82);backdrop-filter:blur(28px);
+border:1px solid rgba(196,120,74,.18);border-radius:20px;
+padding:2.2rem 2.6rem;
+box-shadow:0 0 60px rgba(196,120,74,.07),inset 0 1px 0 rgba(255,255,255,.04);}
+.cg{position:absolute;width:480px;height:480px;
+background:radial-gradient(circle,rgba(196,120,74,.12) 0%,transparent 68%);
+border-radius:50%;top:50%;left:50%;z-index:-1;pointer-events:none;
+animation:aBR 4s ease-in-out infinite;transform:translate(-50%,-50%);}
+@keyframes aBR{0%,100%{opacity:.45;transform:translate(-50%,-50%) scale(1);}
+50%{opacity:1;transform:translate(-50%,-50%) scale(1.25);}}
+.ch{font-family:‘Noto Serif TC’,serif;font-size:clamp(1.6rem,2.8vw,2.4rem);
+font-weight:900;color:#fff;line-height:1.18;margin-bottom:.85rem;
+text-shadow:0 2px 20px rgba(0,0,0,.5);}
+.ch .gd{background:linear-gradient(135deg,#c9a84c,#f0c96e);
+-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
 .ch .gn{color:#5ddf8a;-webkit-text-fill-color:#5ddf8a;}
-.csub{font-size:.8rem;color:rgba(255,255,255,.52);max-width:380px;margin:0 auto 1.2rem;line-height:1.9;font-family:'Noto Sans TC',sans-serif;}
-.cline{display:flex;align-items:center;gap:.55rem;justify-content:center;margin-bottom:.5rem;font-size:.76rem;color:rgba(255,255,255,.68);font-family:'Noto Sans TC',sans-serif;}
-.cline::before{content:'';width:5px;height:5px;border-radius:50%;background:#c4784a;flex-shrink:0;box-shadow:0 0 5px rgba(196,120,74,.5);}
-.cdiv{width:55px;height:1px;background:linear-gradient(90deg,transparent,rgba(196,120,74,.4),transparent);margin:1.1rem auto;}
-.ccontact{font-family:'Space Mono',monospace;font-size:.6rem;color:rgba(255,255,255,.3);line-height:1.8;letter-spacing:.04em;}
+.csub{font-size:.8rem;color:rgba(255,255,255,.52);max-width:380px;
+margin:0 auto 1.2rem;line-height:1.9;font-family:‘Noto Sans TC’,sans-serif;}
+.cline{display:flex;align-items:center;gap:.55rem;justify-content:center;
+margin-bottom:.5rem;font-size:.76rem;color:rgba(255,255,255,.68);
+font-family:‘Noto Sans TC’,sans-serif;}
+.cline::before{content:’’;width:5px;height:5px;border-radius:50%;
+background:#c4784a;flex-shrink:0;box-shadow:0 0 5px rgba(196,120,74,.5);}
+.cdiv{width:55px;height:1px;
+background:linear-gradient(90deg,transparent,rgba(196,120,74,.4),transparent);
+margin:1.1rem auto;}
+.ccontact{font-family:‘Space Mono’,monospace;font-size:.6rem;
+color:rgba(255,255,255,.3);line-height:1.8;letter-spacing:.04em;}
 .ccontact strong{color:rgba(196,120,74,.7);}
-.csig{margin-top:.9rem;font-family:'Space Mono',monospace;font-size:.48rem;letter-spacing:.12em;color:rgba(255,255,255,.16);text-transform:uppercase;}
-.sgw>*{opacity:0;transform:translateY(13px);transition:opacity .42s ease,transform .42s ease;}
+.csig{margin-top:.9rem;font-family:‘Space Mono’,monospace;font-size:.48rem;
+letter-spacing:.12em;color:rgba(255,255,255,.16);text-transform:uppercase;}
+
+/* ── STAGGER ── */
+.sgw>*{opacity:0;transform:translateY(13px);
+transition:opacity .42s ease,transform .42s ease;}
 .sgw.on>*:nth-child(1){opacity:1;transform:none;transition-delay:.04s;}
 .sgw.on>*:nth-child(2){opacity:1;transform:none;transition-delay:.12s;}
 .sgw.on>*:nth-child(3){opacity:1;transform:none;transition-delay:.20s;}
 .sgw.on>*:nth-child(4){opacity:1;transform:none;transition-delay:.28s;}
 .sgw.on>*:nth-child(5){opacity:1;transform:none;transition-delay:.36s;}
+
 @keyframes aFI{from{opacity:0;}to{opacity:1;}}
+
+/* ── WIDE PANEL LAYOUT (shared by P3, P4, P5) ── */
+.p3wrap{display:flex;gap:2rem;align-items:center;
+background:rgba(5,3,1,.84);backdrop-filter:blur(22px);
+border:1px solid rgba(196,120,74,.16);border-radius:15px;
+padding:1.6rem 1.8rem;
+box-shadow:0 24px 55px rgba(0,0,0,.6),inset 0 1px 0 rgba(255,255,255,.03);
+width:min(860px,92vw);}
+.p3left{flex:0 0 300px;}
+.p3right{flex:1;min-width:0;}
+
+.fi3{display:flex;gap:.7rem;padding:.55rem .75rem;margin-bottom:.32rem;
+background:rgba(93,223,138,.03);border:1px solid rgba(93,223,138,.08);
+border-left:2px solid rgba(93,223,138,.3);border-radius:0 8px 8px 0;
+cursor:pointer;transition:all .25s;}
+.fi3:hover,.fi3.fi3-active{background:rgba(93,223,138,.09);
+border-left-color:#5ddf8a;border-color:rgba(93,223,138,.18);}
+.fi3 h4{font-size:.72rem;font-weight:700;margin-bottom:.08rem;color:#fff;}
+.fi3 p{font-size:.62rem;color:rgba(255,255,255,.32);line-height:1.4;}
+
+/* ── MOCK UI ── */
+.mock{background:rgba(12,8,4,.9);border:1px solid rgba(196,120,74,.2);
+border-radius:10px;overflow:hidden;width:100%;}
+.mock-bar{display:flex;align-items:center;gap:5px;padding:.45rem .7rem;
+background:rgba(196,120,74,.07);border-bottom:1px solid rgba(196,120,74,.1);}
+.mock-dot{width:7px;height:7px;border-radius:50%;}
+.mock-dot.r{background:#e05555;}
+.mock-dot.y{background:#f0c96e;}
+.mock-dot.g{background:#5ddf8a;}
+.mock-title{font-family:‘Space Mono’,monospace;font-size:.5rem;
+color:rgba(255,255,255,.35);margin-left:5px;letter-spacing:.08em;}
+.mock-body{padding:.8rem .9rem;display:flex;flex-direction:column;gap:.5rem;}
+
+.mock-row{display:flex;align-items:center;gap:.5rem;}
+.mock-label{font-size:.6rem;color:rgba(255,255,255,.45);width:90px;flex-shrink:0;}
+.mock-track{flex:1;height:5px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;}
+.mock-fill{height:100%;border-radius:3px;transition:width .6s ease;}
+.mock-pct{font-family:‘Space Mono’,monospace;font-size:.58rem;color:rgba(255,255,255,.5);width:30px;text-align:right;}
+
+.mock-chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-top:.3rem;}
+.mock-chip{font-size:.55rem;padding:2px 8px;border-radius:20px;font-family:‘Space Mono’,monospace;}
+.mock-chip.green{background:rgba(93,223,138,.1);color:#5ddf8a;border:1px solid rgba(93,223,138,.2);}
+.mock-chip.gold{background:rgba(240,201,110,.1);color:#f0c96e;border:1px solid rgba(240,201,110,.2);}
+.mock-chip.orange{background:rgba(196,120,74,.1);color:#c4784a;border:1px solid rgba(196,120,74,.2);}
+.mock-chip.blue{background:rgba(126,200,227,.1);color:#7ec8e3;border:1px solid rgba(126,200,227,.2);}
+
+.mock-msg{padding:.45rem .6rem;border-radius:8px;font-size:.63rem;line-height:1.55;}
+.mock-msg.user{background:rgba(196,120,74,.1);border:1px solid rgba(196,120,74,.15);
+color:rgba(255,255,255,.7);align-self:flex-end;max-width:85%;}
+.mock-msg.ai{background:rgba(93,223,138,.07);border:1px solid rgba(93,223,138,.12);
+color:rgba(255,255,255,.65);}
+.mock-msg strong{color:#5ddf8a;}
+.mock-msg .gd{color:#f0c96e;}
+.mock-input{display:flex;align-items:center;justify-content:space-between;
+background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+border-radius:6px;padding:.35rem .6rem;margin-top:.2rem;}
+.mock-input span{font-size:.6rem;color:rgba(255,255,255,.2);}
+.mock-send{font-size:.55rem;background:rgba(196,120,74,.2);color:#c4784a;
+padding:2px 8px;border-radius:4px;font-family:‘Space Mono’,monospace;}
+
+.mock-q{display:flex;align-items:center;gap:.5rem;padding:.4rem .5rem;
+background:rgba(255,255,255,.03);border-radius:6px;border:1px solid rgba(255,255,255,.06);}
+.mock-qnum{font-family:‘Space Mono’,monospace;font-size:.58rem;color:#c4784a;flex-shrink:0;}
+.mock-qtext{font-size:.6rem;color:rgba(255,255,255,.6);flex:1;}
+.mock-score{font-family:‘Space Mono’,monospace;font-size:.58rem;flex-shrink:0;}
+.mock-score.correct{color:#5ddf8a;}
+.mock-score.wrong{color:#e05555;}
+.mock-feedback{font-size:.62rem;color:rgba(255,255,255,.45);
+background:rgba(240,201,110,.06);border:1px solid rgba(240,201,110,.1);
+border-radius:6px;padding:.4rem .6rem;line-height:1.5;}
+
+/* ── PORTFOLIO / TIMELINE ── */
+.mock-timeline{display:flex;flex-direction:column;gap:.35rem;}
+.mock-titem{display:flex;gap:.6rem;align-items:flex-start;
+padding:.45rem .55rem;background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.07);border-radius:7px;
+border-left:2px solid rgba(93,223,138,.35);}
+.mock-titem.gold-left{border-left-color:rgba(240,201,110,.45);}
+.mock-titem.blue-left{border-left-color:rgba(126,200,227,.35);}
+.mock-tdate{font-family:‘Space Mono’,monospace;font-size:.5rem;
+color:rgba(255,255,255,.3);flex-shrink:0;padding-top:1px;width:48px;}
+.mock-tcontent h5{font-size:.63rem;font-weight:700;color:rgba(255,255,255,.82);margin-bottom:.1rem;}
+.mock-tcontent p{font-size:.58rem;color:rgba(255,255,255,.32);line-height:1.4;}
+.mock-tbadge{font-size:.5rem;padding:1px 7px;border-radius:10px;
+font-family:‘Space Mono’,monospace;display:inline-block;margin-top:.15rem;}
+.mock-tbadge.green{background:rgba(93,223,138,.1);color:#5ddf8a;border:1px solid rgba(93,223,138,.2);}
+.mock-tbadge.gold{background:rgba(240,201,110,.1);color:#f0c96e;border:1px solid rgba(240,201,110,.2);}
+.mock-tbadge.blue{background:rgba(126,200,227,.1);color:#7ec8e3;border:1px solid rgba(126,200,227,.2);}
+
+.mock-progress-ring{display:flex;align-items:center;gap:.7rem;
+padding:.45rem .55rem;background:rgba(93,223,138,.04);
+border:1px solid rgba(93,223,138,.1);border-radius:7px;}
+.mock-ring-label{font-size:.62rem;color:rgba(255,255,255,.55);flex:1;}
+.mock-ring-val{font-family:‘Space Mono’,monospace;font-size:.9rem;font-weight:700;color:#5ddf8a;}
+.mock-ring-sub{font-size:.5rem;color:rgba(255,255,255,.25);}
+
+/* ── RADAR CHART (SVG) ── */
+.mock-radar-wrap{display:flex;flex-direction:column;gap:.4rem;}
+.mock-radar-header{display:flex;align-items:center;justify-content:space-between;}
+.mock-radar-name{font-size:.68rem;font-weight:700;color:#fff;}
+.mock-radar-class{font-family:‘Space Mono’,monospace;font-size:.5rem;color:rgba(255,255,255,.3);}
+.radar-svg{display:block;margin:0 auto;}
+.mock-radar-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.3rem;margin-top:.2rem;}
+.mock-rstat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
+border-radius:5px;padding:.3rem .4rem;text-align:center;}
+.mock-rstat-v{font-family:‘Space Mono’,monospace;font-size:.72rem;color:#5ddf8a;font-weight:700;}
+.mock-rstat-l{font-size:.5rem;color:rgba(255,255,255,.28);}
+
+/* ── PARENT APP TABS ── */
+.mock-tabs{display:flex;gap:.3rem;margin-bottom:.5rem;}
+.mock-tab{font-family:‘Space Mono’,monospace;font-size:.5rem;
+padding:.25rem .55rem;border-radius:5px;cursor:pointer;
+border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.3);
+transition:all .2s;}
+.mock-tab.active{background:rgba(196,120,74,.12);color:#c4784a;
+border-color:rgba(196,120,74,.25);}
+.mock-notif{display:flex;align-items:flex-start;gap:.5rem;
+padding:.45rem .55rem;background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.07);border-radius:7px;}
+.mock-notif-icon{font-size:.8rem;flex-shrink:0;}
+.mock-notif-body h5{font-size:.63rem;font-weight:700;color:rgba(255,255,255,.8);margin-bottom:.08rem;}
+.mock-notif-body p{font-size:.58rem;color:rgba(255,255,255,.32);line-height:1.4;}
+.mock-notif-time{font-family:‘Space Mono’,monospace;font-size:.48rem;
+color:rgba(255,255,255,.2);flex-shrink:0;margin-top:2px;}
 </style>
+
 </head>
 <body>
+
 <div id="cur"></div><div id="cur2"></div>
 <canvas id="c"></canvas>
 <div id="fade"></div>
-<div id="logo"><div class="lb">🏫</div><div class="lt">福瑞斯特高級中學<span>AI Solution by Solvyn AI</span></div></div>
+
+<div id="logo">
+  <div class="lb">🏫</div>
+  <div class="lt">福瑞斯特高級中學<span>AI Solution by Solvyn AI</span></div>
+</div>
 <div id="nav"></div>
 <div id="scn">01 / 09</div>
 <div id="sh"><span>Scroll to explore</span><div class="arr"></div></div>
-<div class="panel pc in" id="p0"><div id="hero"><div class="tag" style="justify-content:center;margin-bottom:.6rem;">Present by Solvyn AI</div><div class="ht1">AI 賦能教育管理系統</div><div class="ht1b">成為領先的 AI 標竿私立高中</div><div class="ht2">新北市私立福瑞斯特高級中學 · 智慧校園導入解決方案</div><div class="hbadge"><div class="bdot"></div>量身打造 · 全面整合 · 持續優化</div><div class="hmeta">2026 / Solvyn AI Ltd.</div></div></div>
-<div class="panel pr" id="p1"><div class="card"><div class="tag">核心主張</div><h2 class="h2">AI 的價值不在取代教學，<br>而是<em>放大福瑞斯特的優勢</em></h2><p class="bd">以多元化課程與雙語教育為根基，讓 AI 成為強化學校特色的最強後盾。</p><div class="sgw" id="p1s"><div class="fi"><div class="fi-ic">🏫</div><div><h4>學校特色強化</h4><p>透過 AI 教育結合雙語與多元課程，強化學校特色，打造具國際視野的品牌亮點</p></div></div><div class="fi"><div class="fi-ic">🎓</div><div><h4>升學成果支持</h4><p>AI 系統化整理與深化學習歷程，讓既有教學成果更容易被累積與呈現，提升升學競爭力</p></div></div><div class="fi"><div class="fi-ic">⚙️</div><div><h4>日常運作優化</h4><p>導入 AI 優化教學與行政流程，減輕教師重複性行政負擔，讓師資專注於高品質教學</p></div></div></div></div></div>
-<div class="panel pl" id="p2"><div class="card card-wide"><div class="tag">關鍵時機</div><h2 class="h2">打造全台第一所<br>AI 化完全中學，<em>接軌國際舞台</em></h2><div class="sgw" id="p2s"><div class="ni"><div class="ni-num">1</div><div><h4>108 課綱的制度紅利</h4><p>強調學習歷程的升學制度，<span class="hl">讓數位化工具能直接支援現行備審準備</span>，AI 系統與現行制度的契合度在此刻最高</p></div></div><div class="ni"><div class="ni-num">2</div><div><h4>家長期待正在快速改變</h4><p>AI 輔助學習的接受度快速提升，開始成為家長選校考量之一。<span class="hl">率先導入的學校，將率先收割家長信任紅利</span></p></div></div><div class="ni"><div class="ni-num">3</div><div><h4>先行者優勢不可逆</h4><p>AI 系統需要時間積累使用習慣與學生資料——<span class="hl">今年導入的學校，三年後已建立競爭對手難以追趕的品牌護城河</span></p></div></div></div></div></div>
-<div class="panel pr" id="p3"><div class="card"><div class="tag">模組一 · 教學輔助系統</div><h2 class="h2">讓每位老師都有<br><em>AI 教學夥伴</em></h2><p class="bd">從備課到批改，AI 全程輔助，讓教師從重複性工作中解放。</p><div class="sgw" id="p3s"><div class="fi"><div class="fi-ic">📖</div><div><h4>AI 素養課程包裝支援</h4><p>協助整理與強化 AI 課程特色，提升對外招生吸引力與品牌差異化，將課網內容與 AI 工具結合</p></div></div><div class="fi"><div class="fi-ic">🎯</div><div><h4>個人化補強路徑建議</h4><p>根據學生學習狀況提供差異化補強內容與練習建議，協助學生穩定提升學習成效</p></div></div><div class="fi"><div class="fi-ic">📝</div><div><h4>AI 自動出題與批改</h4><p>依據課程進度與學生程度自動生成題目並即時批改，減輕教師負擔，提升評量效率</p></div></div></div></div></div>
-<div class="panel pl" id="p4"><div class="card card-wide"><div class="tag">模組二 · 升學與學習歷程系統</div><h2 class="h2">讓每份努力都被<br><em>看見、記錄、呈現</em></h2><p class="bd">自動化學習歷程建檔，讓升學備審不再是最後一刻的手忙腳亂。</p><div class="sgw" id="p4s"><div class="fi"><div class="fi-ic">📂</div><div><h4>學習歷程自動建檔整合</h4><p>自動收集課程、活動、競賽與成就，建立完整學習歷程檔案，符合 108 課綱備審要求</p></div></div><div class="fi"><div class="fi-ic">🗺️</div><div><h4>AI 個人化學習規劃建議</h4><p>根據學生目標科系，推薦應該參與的課程與活動並提供相關學習資源，精準導航升學方向</p></div></div><div class="fi"><div class="fi-ic">✍️</div><div><h4>AI 自傳與備審文件輔助</h4><p>智慧引導學生撰寫個人申請文件，提升備審品質與一致性，讓每位學生的故事都能精彩呈現</p></div></div></div></div></div>
-<div class="panel pr" id="p5"><div class="card"><div class="tag">模組三 · 家長互動系統</div><h2 class="h2">讓家長與學校<br>成為<em>真正的夥伴</em></h2><p class="bd">360度學習全紀錄，家長隨時掌握孩子的學習動態，建立深度信任。</p><div class="sgw" id="p5s"><div class="fi"><div class="fi-ic">📊</div><div><h4>數據中樞整合</h4><p>自動串接升學與學習歷程系統內資料，將學習軌跡轉化為可視化報表，一圖呈現學習輪廓</p></div></div><div class="fi"><div class="fi-ic">📱</div><div><h4>AI 家長端 App</h4><p>全紀錄看板整合老師評語、作業與考試表現，呈現 360 度學習雷達圖，即時掌握孩子動態</p></div></div><div class="fi"><div class="fi-ic">💬</div><div><h4>AI 學習小幫手</h4><p>家長可透過對話式介面詢問「小孩最近的學習弱點在哪？」「這週表現有進步嗎？」即時獲得解答</p></div></div></div></div></div>
-<div class="panel pl" id="p6"><div class="card card-wide"><div class="tag">模組四 · 校園智慧化與整合</div><h2 class="h2">全方位智慧校園，<br><em>從招生到安全</em>全面升級</h2><div class="sgw" id="p6s"><div class="gcol"><div class="gitem"><h4>🤖 官網 AI 客服</h4><p>24小時即時回應家長與學生諮詢，提升招生服務品質並減少行政人力負擔</p></div><div class="gitem"><h4>📋 招生資訊整合</h4><p>整合各管道招生資訊，優化報名流程與互動設計，提高潛在學生轉換率</p></div><div class="gitem"><h4>📚 AI 智慧圖書館</h4><p>整合閱讀、學習與數據分析，打造個人化知識探索環境，提升自主學習與國際視野</p></div><div class="gitem"><h4>🛡️ 校園安全網</h4><p>透過智慧監測與即時通報機制，全面提升校園安全管理效率，讓師生專注於教與學</p></div></div></div></div></div>
-<div class="panel pr" id="p7"><div class="card"><div class="tag">導入方式與合作彈性</div><h2 class="h2">在既有優秀基礎上，<br><em>量身打造</em>客製化方案</h2><p class="bd">我們不賣標準品，每一份方案都從深度了解學校開始。</p><div class="sgw" id="p7s"><div class="pi"><div class="pi-ic">🔍</div><div><h4>了解貴校目前的發展重點與招生方向</h4><p>深度訪談校長、行政、教師，找到最關鍵的三個痛點優先解決</p></div></div><div class="pi"><div class="pi-ic">🔗</div><div><h4>分享其他學校的 AI 應用方式與可能做法</h4><p>提供跨校成功案例，讓福瑞斯特站在巨人的肩膀上快速起步</p></div></div><div class="pi"><div class="pi-ic">📑</div><div><h4>提供初步的 AI 導入評估建議</h4><p>免費出具客製化評估報告，從需求到技術可行性一次釐清</p></div></div></div></div></div>
-<div class="panel pc" id="p8"><div id="closing"><div class="cg"></div><div class="tag" style="justify-content:center;">Get in Touch</div><div class="ch">教育是長遠的事，<br>我們選擇與福瑞斯特<br><span class="gd">一起走這段路</span></div><p class="csub">每一所學校都有獨特的文化與節奏，<br>我們在乎的是與您一起走得長遠。</p><div class="cdiv"></div><div class="cline">從第一次對話開始，我們就是同一個團隊</div><div class="cline">您的學生成長，是我們共同的成果</div><div class="cdiv"></div><div class="ccontact"><strong>Solvyn AI Ltd.</strong><br>新北市三重區 重新路5段609巷18號7樓之5<br>info@solvynai.com</div><div class="csig">Forestry High School × Solvyn AI · 2026</div></div></div>
+
+<!-- ══ P0: HERO ══ -->
+
+<div class="panel pc in" id="p0">
+  <div id="hero">
+    <div class="tag" style="justify-content:center;margin-bottom:.6rem;">Present by Solvyn AI</div>
+    <div class="ht1">AI 賦能教育管理系統</div>
+    <div class="ht1b">成為領先的 AI 標竿私立高中</div>
+    <div class="ht2">新北市私立福瑞斯特高級中學 · 智慧校園導入解決方案</div>
+    <div class="hbadge"><div class="bdot"></div>量身打造 · 全面整合 · 持續優化</div>
+    <div class="hmeta">2026 / Solvyn AI Ltd.</div>
+  </div>
+</div>
+
+<!-- ══ P1: 核心主張 ══ -->
+
+<div class="panel pr" id="p1">
+  <div class="card">
+    <div class="tag">核心主張</div>
+    <h2 class="h2">AI 的價值不在取代教學，<br>而是<em>放大福瑞斯特的優勢</em></h2>
+    <p class="bd">以多元化課程與雙語教育為根基，讓 AI 成為強化學校特色的最強後盾。</p>
+    <div class="sgw" id="p1s">
+      <div class="fi">
+        <div class="fi-ic">🏫</div>
+        <div><h4>學校特色強化</h4><p>透過 AI 教育結合雙語與多元課程，強化學校特色，打造具國際視野的品牌亮點</p></div>
+      </div>
+      <div class="fi">
+        <div class="fi-ic">🎓</div>
+        <div><h4>升學成果支持</h4><p>AI 系統化整理與深化學習歷程，讓既有教學成果更容易被累積與呈現，提升升學競爭力</p></div>
+      </div>
+      <div class="fi">
+        <div class="fi-ic">⚙️</div>
+        <div><h4>日常運作優化</h4><p>導入 AI 優化教學與行政流程，減輕教師重複性行政負擔，讓師資專注於高品質教學</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ P2: 關鍵時機 ══ -->
+
+<div class="panel pl" id="p2">
+  <div class="card card-wide">
+    <div class="tag">關鍵時機</div>
+    <h2 class="h2">打造全台第一所<br>AI 化完全中學，<em>接軌國際舞台</em></h2>
+    <div class="sgw" id="p2s">
+      <div class="ni">
+        <div class="ni-num">1</div>
+        <div>
+          <h4>108 課綱的制度紅利</h4>
+          <p>強調學習歷程的升學制度，<span class="hl">讓數位化工具能直接支援現行備審準備</span>，AI 系統與現行制度的契合度在此刻最高</p>
+        </div>
+      </div>
+      <div class="ni">
+        <div class="ni-num">2</div>
+        <div>
+          <h4>家長期待正在快速改變</h4>
+          <p>AI 輔助學習的接受度快速提升，開始成為家長選校考量之一。<span class="hl">率先導入的學校，將率先收割家長信任紅利</span></p>
+        </div>
+      </div>
+      <div class="ni">
+        <div class="ni-num">3</div>
+        <div>
+          <h4>先行者優勢不可逆</h4>
+          <p>AI 系統需要時間積累使用習慣與學生資料——<span class="hl">今年導入的學校，三年後已建立競爭對手難以追趕的品牌護城河</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ P3: 教學輔助系統 ══ -->
+
+<div class="panel pc" id="p3">
+  <div class="p3wrap">
+    <div class="p3left">
+      <div class="tag">模組一 · 教學輔助系統</div>
+      <h2 class="h2">讓每位老師都有<br><em>AI 教學夥伴</em></h2>
+      <p class="bd">從備課到批改，AI 全程輔助，讓教師從重複性工作中解放。</p>
+      <div class="sgw" id="p3s">
+        <div class="fi3 fi3-active" id="f3a" onclick="setMock('p3',0)">
+          <div class="fi-ic">📊</div>
+          <div><h4>AI 素養課程包裝支援</h4><p>整合雙語與多元課程特色，強化品牌差異化</p></div>
+        </div>
+        <div class="fi3" id="f3b" onclick="setMock('p3',1)">
+          <div class="fi-ic">💬</div>
+          <div><h4>個人化補強路徑建議</h4><p>根據學習狀況提供差異化補強內容與建議</p></div>
+        </div>
+        <div class="fi3" id="f3c" onclick="setMock('p3',2)">
+          <div class="fi-ic">📝</div>
+          <div><h4>AI 自動出題與批改</h4><p>自動生成題目並即時批改，提升評量效率</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="p3right">
+      <!-- MOCK 0: 儀表板 -->
+      <div class="mock" id="p3mock0">
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 課程儀表板</span></div>
+        <div class="mock-body">
+          <div class="mock-row"><span class="mock-label">雙語課程覆蓋率</span><div class="mock-track"><div class="mock-fill" style="width:82%;background:#5ddf8a;"></div></div><span class="mock-pct">82%</span></div>
+          <div class="mock-row"><span class="mock-label">AI 工具整合度</span><div class="mock-track"><div class="mock-fill" style="width:67%;background:#c4784a;"></div></div><span class="mock-pct">67%</span></div>
+          <div class="mock-row"><span class="mock-label">多元課程豐富度</span><div class="mock-track"><div class="mock-fill" style="width:91%;background:#f0c96e;"></div></div><span class="mock-pct">91%</span></div>
+          <div class="mock-row"><span class="mock-label">家長滿意度</span><div class="mock-track"><div class="mock-fill" style="width:78%;background:#5ddf8a;"></div></div><span class="mock-pct">78%</span></div>
+          <div class="mock-chips">
+            <div class="mock-chip green">📈 課程品質提升</div>
+            <div class="mock-chip gold">🌐 國際接軌</div>
+            <div class="mock-chip orange">🤖 AI 整合中</div>
+          </div>
+        </div>
+      </div>
+      <!-- MOCK 1: AI 對話 -->
+      <div class="mock" id="p3mock1" style="display:none;">
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 學習顧問</span></div>
+        <div class="mock-body">
+          <div class="mock-msg user">小明的數學哪裡比較弱？</div>
+          <div class="mock-msg ai">📊 根據近三週測驗，小明在<strong>「函數圖形」</strong>與<strong>「不等式」</strong>正確率分別為 54% 與 61%，建議優先加強。</div>
+          <div class="mock-msg user">幫我出三題函數練習題</div>
+          <div class="mock-msg ai">✅ 已根據小明程度生成三道難度遞增練習題，並附解題提示，可直接發送給學生。</div>
+          <div class="mock-input"><span>輸入問題…</span><div class="mock-send">送出</div></div>
+        </div>
+      </div>
+      <!-- MOCK 2: 出題批改 -->
+      <div class="mock" id="p3mock2" style="display:none;">
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 出題與批改系統</span></div>
+        <div class="mock-body">
+          <div class="mock-q"><span class="mock-qnum">Q1</span><span class="mock-qtext">若 f(x) = 2x² - 3x + 1，求 f(2) 的值</span><span class="mock-score correct">✓ 3分</span></div>
+          <div class="mock-q"><span class="mock-qnum">Q2</span><span class="mock-qtext">解不等式 x² - 5x + 6 &lt; 0</span><span class="mock-score wrong">✗ 0分</span></div>
+          <div class="mock-q"><span class="mock-qnum">Q3</span><span class="mock-qtext">求直線 y=2x+1 與 y=-x+4 的交點</span><span class="mock-score correct">✓ 3分</span></div>
+          <div class="mock-feedback">💡 AI 建議：Q2 全班錯誤率 68%，建議下堂課重點複習因式分解。</div>
+          <div class="mock-chips">
+            <div class="mock-chip green">批改完成 3/3</div>
+            <div class="mock-chip gold">平均 6/9 分</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ P4: 升學與學習歷程系統 ══ -->
+
+<div class="panel pl" id="p4">
+  <div class="p3wrap">
+    <div class="p3left">
+      <div class="tag">模組二 · 升學與學習歷程系統</div>
+      <h2 class="h2">讓每份努力都被<br><em>看見、記錄、呈現</em></h2>
+      <p class="bd">自動化學習歷程建檔，讓升學備審不再是最後一刻的手忙腳亂。</p>
+      <div class="sgw" id="p4s">
+        <div class="fi3 fi3-active" id="f4a" onclick="setMock('p4',0)">
+          <div class="fi-ic">📂</div>
+          <div><h4>學習歷程自動建檔整合</h4><p>自動收集課程、活動、競賽與成就，建立完整歷程檔案</p></div>
+        </div>
+        <div class="fi3" id="f4b" onclick="setMock('p4',1)">
+          <div class="fi-ic">🗺️</div>
+          <div><h4>AI 個人化學習規劃建議</h4><p>根據目標科系推薦課程與活動，精準導航升學方向</p></div>
+        </div>
+        <div class="fi3" id="f4c" onclick="setMock('p4',2)">
+          <div class="fi-ic">✍️</div>
+          <div><h4>AI 自傳與備審文件輔助</h4><p>智慧引導撰寫個人申請文件，提升備審品質與一致性</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="p3right">
+      <!-- MOCK 0: 學習歷程時間軸 -->
+      <div class="mock" id="p4mock0">
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">學習歷程自動建檔系統</span></div>
+        <div class="mock-body">
+          <div class="mock-timeline">
+            <div class="mock-titem">
+              <span class="mock-tdate">2025.11</span>
+              <div class="mock-tcontent">
+                <h5>全國數理奧林匹亞競賽</h5>
+                <p>個人組 · 銀牌得主 · 代表學校出賽</p>
+                <span class="mock-tbadge gold">🏅 競賽成就</span>
+              </div>
+            </div>
+            <div class="mock-titem blue-left">
+              <span class="mock-tdate">2025.09</span>
+              <div class="mock-tcontent">
+                <h5>雙語國際交流研習營</h5>
+                <p>英語授課 · 完成 32 小時 · 取得認證</p>
+                <span class="mock-tbadge blue">🌐 雙語課程</span>
+              </div>
+            </div>
+            <div class="mock-titem">
+              <span class="mock-tdate">2025.07</span>
+              <div class="mock-tcontent">
+                <h5>社區服務學習計畫</h5>
+                <p>擔任隊長 · 累計 48 小時服務時數</p>
+                <span class="mock-tbadge green">✅ 服務學習</span>
+              </div>
+            </div>
+            <div class="mock-titem gold-left">
+              <span class="mock-tdate">2025.05</span>
+              <div class="mock-tcontent">
+                <h5>自主學習專題：AI 倫理研究</h5>
+                <p>完成 18 週研究報告 · 指導教師評語優良</p>
+                <span class="mock-tbadge gold">📑 自主學習</span>
+              </div>
+            </div>
+          </div>
+          <div class="mock-chips">
+            <div class="mock-chip green">已記錄 24 筆</div>
+            <div class="mock-chip gold">完整度 91%</div>
+            <div class="mock-chip blue">符合台大備審</div>
+          </div>
+        </div>
+      </div>
+      <!-- MOCK 1: AI 規劃建議 -->
+      <div class="mock" id="p4mock1" style="display:none;">
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 升學路徑規劃</span></div>
+        <div class="mock-body">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.3rem;">
+            <span style="font-size:.63rem;color:rgba(255,255,255,.6);">目標科系：<strong style="color:#f0c96e;">國立大學 · 電機資工</strong></span>
+            <span class="mock-chip gold" style="margin-top:0;">高度匹配</span>
+          </div>
+          <div class="mock-row"><span class="mock-label">數理能力</span><div class="mock-track"><div class="mock-fill" style="width:88%;background:#5ddf8a;"></div></div><span class="mock-pct">88%</span></div>
+          <div class="mock-row"><span class="mock-label">專題研究</span><div class="mock-track"><div class="mock-fill" style="width:72%;background:#f0c96e;"></div></div><span class="mock-pct">72%</span></div>
+          <div class="mock-row"><span class="mock-label">英語能力</span><div class="mock-track"><div class="mock-fill" style="width:65%;background:#c4784a;"></div></div><span class="mock-pct">65%</span></div>
+          <div class="mock-feedback">💡 建議補強：參加一項程式設計競賽（如 APCS）以強化備審亮點，預計可提升申請成功率 23%。</div>
+          <div class="mock-chips">
+            <div class="mock-chip green">✅ 競賽資歷充足</div>
+            <div class="mock-chip orange">⚠️ 建議補英語檢定</div>
+          </div>
+        </div>
+      </div>
+      <!-- MOCK 2: AI 自傳輔助 -->
+      <div class="mock" id="p4mock2" style="display:none;">
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 備審文件輔助</span></div>
+        <div class="mock-body">
+          <div class="mock-msg user">幫我寫自傳的開頭段落</div>
+          <div class="mock-msg ai">📝 根據你的歷程，以下是建議開頭：<br><br>「從一道數學競賽題目，到對<strong>AI 倫理</strong>的深切思考——我的高中三年，是一場不斷<span class="gd">跨越邊界</span>的旅程…」</div>
+          <div class="mock-msg user">這段太文學了，改學術一點</div>
+          <div class="mock-msg ai">✅ 已調整風格。強調研究動機與學術脈絡，並引用你的<strong>自主學習專題成果</strong>，更符合理工科系偏好。</div>
+          <div class="mock-input"><span>繼續修改或詢問…</span><div class="mock-send">送出</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ P5: 家長互動系統 ══ -->
+
+<div class="panel pr" id="p5">
+  <div class="p3wrap" style="flex-direction:row-reverse;">
+    <div class="p3left">
+      <div class="tag">模組三 · 家長互動系統</div>
+      <h2 class="h2">讓家長與學校<br>成為<em>真正的夥伴</em></h2>
+      <p class="bd">360度學習全紀錄，家長隨時掌握孩子的學習動態，建立深度信任。</p>
+      <div class="sgw" id="p5s">
+        <div class="fi3 fi3-active" id="f5a" onclick="setMock('p5',0)">
+          <div class="fi-ic">📊</div>
+          <div><h4>360° 學習雷達圖</h4><p>數據視覺化呈現學習輪廓，一圖掌握孩子全方位表現</p></div>
+        </div>
+        <div class="fi3" id="f5b" onclick="setMock('p5',1)">
+          <div class="fi-ic">📱</div>
+          <div><h4>AI 家長端動態看板</h4><p>整合老師評語、作業與考試，即時掌握孩子動態</p></div>
+        </div>
+        <div class="fi3" id="f5c" onclick="setMock('p5',2)">
+          <div class="fi-ic">💬</div>
+          <div><h4>AI 學習小幫手對話</h4><p>對話式介面即時解答家長對孩子學習狀況的疑問</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="p3right">
+      <!-- MOCK 0: 雷達圖 -->
+      <div class="mock" id="p5mock0">
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">360° 學習雷達圖</span></div>
+        <div class="mock-body">
+          <div class="mock-radar-wrap">
+            <div class="mock-radar-header">
+              <span class="mock-radar-name">王小明 · 高二甲</span>
+              <span class="mock-radar-class">2025 / S2</span>
+            </div>
+            <svg class="radar-svg" width="200" height="180" viewBox="0 0 200 180">
+              <!-- Grid rings -->
+              <polygon points="100,18 163,54 163,126 100,162 37,126 37,54" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <polygon points="100,36 148,63 148,117 100,144 52,117 52,63" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <polygon points="100,54 133,72 133,108 100,126 67,108 67,72" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <!-- Axis lines -->
+              <line x1="100" y1="18" x2="100" y2="162" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <line x1="163" y1="54" x2="37" y2="126" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <line x1="163" y1="126" x2="37" y2="54" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+              <!-- Data polygon: 數學88, 英語65, 科學79, 社活82, 藝術60, 自學72 -->
+              <!-- Normalized: ring3=inner(54), ring1=outer(18). Scale: val/100 * (162-18)/2 = val*0.72 from center -->
+              <!-- center=100,90. top=0°, then 60° each -->
+              <!-- pts: 88%→top: 100,90-63.4=26.6; 65%→60°: 100+46.8*0.866,90-46.8*0.5=40.5,90-23.4=66.6→140.5,66.6; 79%→120°: 56.9,66.9+; -->
+              <polygon
+                points="100,26.6 140.4,66.6 134.8,119.6 100,138.5 66.2,118.7 64.4,64.2"
+                fill="rgba(93,223,138,0.18)" stroke="#5ddf8a" stroke-width="1.5"/>
+              <!-- Labels -->
+              <text x="100" y="13" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.5)">數學</text>
+              <text x="170" y="52" text-anchor="start" font-size="8" fill="rgba(255,255,255,0.5)">英語</text>
+              <text x="170" y="132" text-anchor="start" font-size="8" fill="rgba(255,255,255,0.5)">科學</text>
+              <text x="100" y="175" text-anchor="middle" font-size="8" fill="rgba(255,255,255,0.5)">社課</text>
+              <text x="30" y="132" text-anchor="end" font-size="8" fill="rgba(255,255,255,0.5)">藝術</text>
+              <text x="30" y="52" text-anchor="end" font-size="8" fill="rgba(255,255,255,0.5)">自學</text>
+            </svg>
+            <div class="mock-radar-stats">
+              <div class="mock-rstat"><div class="mock-rstat-v">88</div><div class="mock-rstat-l">數學</div></div>
+              <div class="mock-rstat"><div class="mock-rstat-v" style="color:#f0c96e;">65</div><div class="mock-rstat-l">英語</div></div>
+              <div class="mock-rstat"><div class="mock-rstat-v">79</div><div class="mock-rstat-l">科學</div></div>
+              <div class="mock-rstat"><div class="mock-rstat-v">82</div><div class="mock-rstat-l">社課</div></div>
+              <div class="mock-rstat"><div class="mock-rstat-v" style="color:#c4784a;">60</div><div class="mock-rstat-l">藝術</div></div>
+              <div class="mock-rstat"><div class="mock-rstat-v">72</div><div class="mock-rstat-l">自學</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- MOCK 1: 動態看板 -->
+      <div class="mock" id="p5mock1" style="display:none;">
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">家長端學習動態看板</span></div>
+        <div class="mock-body">
+          <div class="mock-tabs">
+            <div class="mock-tab active">本週動態</div>
+            <div class="mock-tab">作業進度</div>
+            <div class="mock-tab">考試成績</div>
+          </div>
+          <div class="mock-notif">
+            <span class="mock-notif-icon">✅</span>
+            <div class="mock-notif-body">
+              <h5>數學小考成績出爐</h5>
+              <p>王小明本次得 87分，高於班級平均 12分，老師評語：「解題思路清晰」</p>
+            </div>
+            <span class="mock-notif-time">今天</span>
+          </div>
+          <div class="mock-notif">
+            <span class="mock-notif-icon">📚</span>
+            <div class="mock-notif-body">
+              <h5>英語作業已繳交</h5>
+              <p>Reading Report 已批改，得 B+。老師建議加強段落組織結構。</p>
+            </div>
+            <span class="mock-notif-time">昨天</span>
+          </div>
+          <div class="mock-notif" style="border-left:2px solid rgba(240,201,110,.4);">
+            <span class="mock-notif-icon">🏅</span>
+            <div class="mock-notif-body">
+              <h5>已獲選代表學校參加競賽</h5>
+              <p>恭喜！小明入選全國數理奧林匹亞初選名單，請確認出賽同意書。</p>
+            </div>
+            <span class="mock-notif-time">週一</span>
+          </div>
+          <div class="mock-chips">
+            <div class="mock-chip green">本週出席 5/5</div>
+            <div class="mock-chip gold">作業完成率 94%</div>
+          </div>
+        </div>
+      </div>
+      <!-- MOCK 2: AI 小幫手 -->
+      <div class="mock" id="p5mock2" style="display:none;">
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 學習小幫手</span></div>
+        <div class="mock-body">
+          <div class="mock-msg user">小孩最近的學習弱點在哪？</div>
+          <div class="mock-msg ai">📊 根據近兩週測驗數據，小明在<strong>英語寫作</strong>與<strong>藝術鑑賞</strong>相對較弱，分別落後班平均 18% 與 22%。其他科目表現優秀。</div>
+          <div class="mock-msg user">這週有進步嗎？</div>
+          <div class="mock-msg ai">✅ 數學本週提升 <strong style="color:#5ddf8a;">+9分</strong>，科學作業完成率也從 78% 升至 94%。英語仍需關注，建議可以在家多鼓勵閱讀英文文章。</div>
+          <div class="mock-input"><span>詢問孩子的學習狀況…</span><div class="mock-send">送出</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ P6: 校園智慧化與整合 ══ -->
+
+<div class="panel pl" id="p6">
+  <div class="card card-wide">
+    <div class="tag">模組四 · 校園智慧化與整合</div>
+    <h2 class="h2">全方位智慧校園，<br><em>從招生到安全</em>全面升級</h2>
+    <div class="sgw" id="p6s">
+      <div class="gcol">
+        <div class="gitem"><h4>🤖 官網 AI 客服</h4><p>24小時即時回應家長與學生諮詢，提升招生服務品質並減少行政人力負擔</p></div>
+        <div class="gitem"><h4>📋 招生資訊整合</h4><p>整合各管道招生資訊，優化報名流程與互動設計，提高潛在學生轉換率</p></div>
+        <div class="gitem"><h4>📚 AI 智慧圖書館</h4><p>整合閱讀、學習與數據分析，打造個人化知識探索環境，提升自主學習與國際視野</p></div>
+        <div class="gitem"><h4>🛡️ 校園安全網</h4><p>透過智慧監測與即時通報機制，全面提升校園安全管理效率，讓師生專注於教與學</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ P7: 導入方式 ══ -->
+
+<div class="panel pr" id="p7">
+  <div class="card">
+    <div class="tag">導入方式與合作彈性</div>
+    <h2 class="h2">在既有優秀基礎上，<br><em>量身打造</em>客製化方案</h2>
+    <p class="bd">我們不賣標準品，每一份方案都從深度了解學校開始。</p>
+    <div class="sgw" id="p7s">
+      <div class="pi">
+        <div class="pi-ic">🔍</div>
+        <div><h4>了解貴校目前的發展重點與招生方向</h4><p>深度訪談校長、行政、教師，找到最關鍵的三個痛點優先解決</p></div>
+      </div>
+      <div class="pi">
+        <div class="pi-ic">🔗</div>
+        <div><h4>分享其他學校的 AI 應用方式與可能做法</h4><p>提供跨校成功案例，讓福瑞斯特站在巨人的肩膀上快速起步</p></div>
+      </div>
+      <div class="pi">
+        <div class="pi-ic">📑</div>
+        <div><h4>提供初步的 AI 導入評估建議</h4><p>免費出具客製化評估報告，從需求到技術可行性一次釐清</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ P8: 結語 ══ -->
+
+<div class="panel pc" id="p8">
+  <div id="closing">
+    <div class="cg"></div>
+    <div class="tag" style="justify-content:center;">Get in Touch</div>
+    <div class="ch">
+      教育是長遠的事，<br>
+      我們選擇與福瑞斯特<br>
+      <span class="gd">一起走這段路</span>
+    </div>
+    <p class="csub">
+      每一所學校都有獨特的文化與節奏，<br>
+      我們在乎的是與您一起走得長遠。
+    </p>
+    <div class="cdiv"></div>
+    <div class="cline">從第一次對話開始，我們就是同一個團隊</div>
+    <div class="cline">您的學生成長，是我們共同的成果</div>
+    <div class="cdiv"></div>
+    <div class="ccontact">
+      <strong>Solvyn AI Ltd.</strong><br>
+      新北市三重區 重新路5段609巷18號7樓之5<br>
+      info@solvynai.com
+    </div>
+    <div class="csig">Forestry High School × Solvyn AI · 2026</div>
+  </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 <script>
-const CV=document.getElementById('c');
-const RE=new THREE.WebGLRenderer({canvas:CV,antialias:true});
+// ══════════════════════════════════
+//  RENDERER
+// ══════════════════════════════════
+const CV = document.getElementById('c');
+const RE = new THREE.WebGLRenderer({ canvas:CV, antialias:true });
 RE.setPixelRatio(Math.min(devicePixelRatio,2));
 RE.setSize(innerWidth,innerHeight);
 RE.setClearColor(0x000000,1);
-const SC=new THREE.Scene();
-SC.fog=new THREE.FogExp2(0x000000,0.020);
-const CAM=new THREE.PerspectiveCamera(52,innerWidth/innerHeight,0.1,800);
-window.addEventListener('resize',()=>{RE.setSize(innerWidth,innerHeight);CAM.aspect=innerWidth/innerHeight;CAM.updateProjectionMatrix();});
-function edgeLine(geo,color,opacity=1){return new THREE.LineSegments(new THREE.EdgesGeometry(geo),new THREE.LineBasicMaterial({color,transparent:opacity<1,opacity}));}
-function ebox(w,h,d,color,op=1){return edgeLine(new THREE.BoxGeometry(w,h,d),color,op);}
+
+const SC = new THREE.Scene();
+SC.fog = new THREE.FogExp2(0x000000, 0.020);
+
+const CAM = new THREE.PerspectiveCamera(52,innerWidth/innerHeight,0.1,800);
+
+window.addEventListener('resize',()=>{
+  RE.setSize(innerWidth,innerHeight);
+  CAM.aspect=innerWidth/innerHeight;
+  CAM.updateProjectionMatrix();
+});
+
+function edgeLine(geo, color, opacity=1){
+  return new THREE.LineSegments(
+    new THREE.EdgesGeometry(geo),
+    new THREE.LineBasicMaterial({color,transparent:opacity<1,opacity})
+  );
+}
+function ebox(w,h,d,color,op=1){
+  return edgeLine(new THREE.BoxGeometry(w,h,d),color,op);
+}
 function at(m,x,y,z){m.position.set(x,y,z);return m;}
-const C={brick:0xc4784a,wall:0xd4cfc8,glass:0x7ec8e3,grass:0x3a7025,tree:0x3a6e22,trunk:0x7a4820,gold:0xf0c96e,green:0x5ddf8a,node:0xc4784a};
+
+const C={
+  brick:0xc4784a, wall:0xd4cfc8, glass:0x7ec8e3,
+  grass:0x3a7025, tree:0x3a6e22, trunk:0x7a4820,
+  gold:0xf0c96e,  green:0x5ddf8a, node:0xc4784a,
+};
+
 const gMat=new THREE.LineBasicMaterial({color:0x1e1408,transparent:true,opacity:.4});
-for(let i=-24;i<=24;i+=4){SC.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(i,0,-24),new THREE.Vector3(i,0,24)]),gMat));SC.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-24,0,i),new THREE.Vector3(24,0,i)]),gMat));}
-const B=new THREE.Group();SC.add(B);
-const FH=2.4,FL=3,TH=FH*FL;
-function wing(W,D,ox,oz){const g=new THREE.Group();for(let f=0;f<FL;f++){const y=f*FH+FH/2;g.add(at(ebox(W,FH,D,C.brick,.8),0,y,0));g.add(at(ebox(W+.02,.18,D+.02,C.wall,.9),0,f*FH+FH*.92,0));const n=Math.max(2,Math.round(W/1.7));const step=W/(n+1);for(let i=0;i<n;i++){const wx=-W/2+step*(i+1);g.add(at(ebox(.85,.65,.05,C.glass,.65),wx,y,D/2+.02));}}g.add(at(ebox(W+.04,.16,D+.04,C.wall,.9),0,TH+.08,0));g.position.set(ox,0,oz);return g;}
-B.add(wing(14,3,0,-3.5));B.add(wing(3,10,-5.5,0));B.add(wing(3,7,5.5,-1.5));
-function stairBox(x,y,z,w,h){const g=new THREE.Group();g.add(ebox(w,h,w,C.wall,.9));g.add(at(ebox(w+.04,.12,w+.04,C.brick,.8),0,h/2+.06,0));g.position.set(x,y,z);return g;}
-B.add(stairBox(-1.5,TH+.9,-3.5,2.4,1.8));B.add(stairBox(3.5,TH+.7,-3.5,1.8,1.4));
-const ent=new THREE.Group();ent.add(at(ebox(4.5,.16,1.8,C.wall,.85),0,0,0));ent.add(at(ebox(.16,2.4,.16,C.wall,.8),-1.8,-1.2,.8));ent.add(at(ebox(.16,2.4,.16,C.wall,.8),1.8,-1.2,.8));ent.add(at(ebox(3.2,2.4,.07,C.glass,.6),0,-1.2,.85));ent.position.set(0,TH*.33,7.4);B.add(ent);
+for(let i=-24;i<=24;i+=4){
+  SC.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(
+    [new THREE.Vector3(i,0,-24),new THREE.Vector3(i,0,24)]),gMat));
+  SC.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(
+    [new THREE.Vector3(-24,0,i),new THREE.Vector3(24,0,i)]),gMat));
+}
+
+const B=new THREE.Group();
+SC.add(B);
+
+const FH=2.4, FL=3, TH=FH*FL;
+
+function wing(W,D,ox,oz){
+  const g=new THREE.Group();
+  for(let f=0;f<FL;f++){
+    const y=f*FH+FH/2;
+    g.add(at(ebox(W,FH,D,C.brick,.8),0,y,0));
+    g.add(at(ebox(W+.02,.18,D+.02,C.wall,.9),0,f*FH+FH*.92,0));
+    const n=Math.max(2,Math.round(W/1.7));
+    const step=W/(n+1);
+    for(let i=0;i<n;i++){
+      const wx=-W/2+step*(i+1);
+      g.add(at(ebox(.85,.65,.05,C.glass,.65),wx,y,D/2+.02));
+    }
+  }
+  g.add(at(ebox(W+.04,.16,D+.04,C.wall,.9),0,TH+.08,0));
+  g.position.set(ox,0,oz);
+  return g;
+}
+
+B.add(wing(14,3,0,-3.5));
+B.add(wing(3,10,-5.5,0));
+B.add(wing(3,7,5.5,-1.5));
+
+function stairBox(x,y,z,w,h){
+  const g=new THREE.Group();
+  g.add(ebox(w,h,w,C.wall,.9));
+  g.add(at(ebox(w+.04,.12,w+.04,C.brick,.8),0,h/2+.06,0));
+  g.position.set(x,y,z); return g;
+}
+B.add(stairBox(-1.5,TH+.9,-3.5,2.4,1.8));
+B.add(stairBox(3.5,TH+.7,-3.5,1.8,1.4));
+
+const ent=new THREE.Group();
+ent.add(at(ebox(4.5,.16,1.8,C.wall,.85),0,0,0));
+ent.add(at(ebox(.16,2.4,.16,C.wall,.8),-1.8,-1.2,.8));
+ent.add(at(ebox(.16,2.4,.16,C.wall,.8), 1.8,-1.2,.8));
+ent.add(at(ebox(3.2,2.4,.07,C.glass,.6),0,-1.2,.85));
+ent.position.set(0,TH*.33,7.4);
+B.add(ent);
+
 B.add(at(ebox(8,.02,8,C.grass,.3),0,.01,1.5));
-function tree(x,z,r=1.1){const g=new THREE.Group();g.add(at(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.CylinderGeometry(.1,.14,.9,4)),new THREE.LineBasicMaterial({color:C.trunk,transparent:true,opacity:.65})),0,.45,0));g.add(at(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(r,1)),new THREE.LineBasicMaterial({color:C.tree,transparent:true,opacity:.72})),0,.9+r,0));g.position.set(x,0,z);return g;}
-[[-2.5,-1],[-1.2,-1.8],[.2,-1.3],[1.4,-.8],[-2.5,.5],[-1.2,.2],[.2,.6],[1.4,1.1],[-2.5,2.2],[-1.1,2],[.4,2.3]].forEach(([x,z])=>B.add(tree(x,z,1.0)));
-[[-9,-4],[-9.5,.5],[-9,4.5],[9,-3],[9.5,1],[9,5],[-3,9.5],[1,10],[5,9.5]].forEach(([x,z])=>SC.add(tree(x,z,1.35)));
-const NET=new THREE.Group();SC.add(NET);
-const nPts=[new THREE.Vector3(-11,7,-7),new THREE.Vector3(11,9,-5),new THREE.Vector3(-7,4,8),new THREE.Vector3(9,6,6),new THREE.Vector3(0,13,-3),new THREE.Vector3(0,4,0)];
+
+function tree(x,z,r=1.1){
+  const g=new THREE.Group();
+  g.add(at(new THREE.LineSegments(
+    new THREE.EdgesGeometry(new THREE.CylinderGeometry(.1,.14,.9,4)),
+    new THREE.LineBasicMaterial({color:C.trunk,transparent:true,opacity:.65})),0,.45,0));
+  g.add(at(new THREE.LineSegments(
+    new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(r,1)),
+    new THREE.LineBasicMaterial({color:C.tree,transparent:true,opacity:.72})),0,.9+r,0));
+  g.position.set(x,0,z); return g;
+}
+[[-2.5,-1],[-1.2,-1.8],[.2,-1.3],[1.4,-.8],[-2.5,.5],[-1.2,.2],[.2,.6],[1.4,1.1],[-2.5,2.2],[-1.1,2],[.4,2.3]]
+  .forEach(([x,z])=>B.add(tree(x,z,1.0)));
+[[-9,-4],[-9.5,.5],[-9,4.5],[9,-3],[9.5,1],[9,5],[-3,9.5],[1,10],[5,9.5]]
+  .forEach(([x,z])=>SC.add(tree(x,z,1.35)));
+
+const NET=new THREE.Group(); SC.add(NET);
+const nPts=[
+  new THREE.Vector3(-11,7,-7), new THREE.Vector3(11,9,-5),
+  new THREE.Vector3(-7,4,8),   new THREE.Vector3(9,6,6),
+  new THREE.Vector3(0,13,-3),  new THREE.Vector3(0,4,0),
+];
 const nGeo=new THREE.EdgesGeometry(new THREE.OctahedronGeometry(.22,0));
 const nMat=new THREE.LineBasicMaterial({color:C.node});
 nPts.forEach(p=>{const n=new THREE.LineSegments(nGeo,nMat);n.position.copy(p);NET.add(n);});
 const lMat=new THREE.LineBasicMaterial({color:C.node,transparent:true,opacity:.13});
-[[0,4],[1,4],[2,5],[3,5],[0,2],[1,3],[4,5]].forEach(([a,b])=>{NET.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([nPts[a],nPts[b]]),lMat));});
-const CAMS=[{p:new THREE.Vector3(20,20,20),t:new THREE.Vector3(0,3,0)},{p:new THREE.Vector3(0,5,22),t:new THREE.Vector3(0,4,0)},{p:new THREE.Vector3(-18,5,2),t:new THREE.Vector3(0,4,0)},{p:new THREE.Vector3(14,8,14),t:new THREE.Vector3(0,3,0)},{p:new THREE.Vector3(-14,6,-8),t:new THREE.Vector3(0,4,0)},{p:new THREE.Vector3(10,4,12),t:new THREE.Vector3(0,5,0)},{p:new THREE.Vector3(0,3,5),t:new THREE.Vector3(0,5,-3)},{p:new THREE.Vector3(6,2,18),t:new THREE.Vector3(0,4,0)},{p:new THREE.Vector3(0,28,8),t:new THREE.Vector3(0,0,0)}];
+[[0,4],[1,4],[2,5],[3,5],[0,2],[1,3],[4,5]].forEach(([a,b])=>{
+  NET.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([nPts[a],nPts[b]]),lMat));
+});
+
+const CAMS=[
+  {p:new THREE.Vector3(20,20,20),  t:new THREE.Vector3(0,3,0)},
+  {p:new THREE.Vector3(0,5,22),    t:new THREE.Vector3(0,4,0)},
+  {p:new THREE.Vector3(-18,5,2),   t:new THREE.Vector3(0,4,0)},
+  {p:new THREE.Vector3(14,8,14),   t:new THREE.Vector3(0,3,0)},
+  {p:new THREE.Vector3(-14,6,-8),  t:new THREE.Vector3(0,4,0)},
+  {p:new THREE.Vector3(10,4,12),   t:new THREE.Vector3(0,5,0)},
+  {p:new THREE.Vector3(0,3,5),     t:new THREE.Vector3(0,5,-3)},
+  {p:new THREE.Vector3(6,2,18),    t:new THREE.Vector3(0,4,0)},
+  {p:new THREE.Vector3(0,28,8),    t:new THREE.Vector3(0,0,0)},
+];
+
 const PID=['p0','p1','p2','p3','p4','p5','p6','p7','p8'];
 const LABELS=['開場','核心主張','關鍵時機','教學輔助','學習歷程','家長互動','校園智慧化','導入方式','結語'];
 let cur=0,busy=false;
+
 const navEl=document.getElementById('nav');
-LABELS.forEach((_,i)=>{const d=document.createElement('div');d.className='nd'+(i===0?' on':'');d.onclick=()=>go(i);navEl.appendChild(d);});
-function uiSync(){document.querySelectorAll('.nd').forEach((d,i)=>d.classList.toggle('on',i===cur));document.getElementById('scn').textContent=String(cur+1).padStart(2,'0')+' / '+String(PID.length).padStart(2,'0');document.getElementById('sh').style.opacity=cur===PID.length-1?'0':'1';}
-let cp=CAMS[0].p.clone(),ct=CAMS[0].t.clone();
-let _cp=CAMS[0].p.clone(),_ct=CAMS[0].t.clone();
-function go(i){if(busy||i===cur||i<0||i>=PID.length)return;busy=true;const fd=document.getElementById('fade');fd.style.opacity='.85';setTimeout(()=>{PID.forEach(id=>{const el=document.getElementById(id);el.classList.remove('in');el.querySelectorAll('.sgw').forEach(s=>s.classList.remove('on'));});cur=i;cp.copy(CAMS[i].p);ct.copy(CAMS[i].t);const el=document.getElementById(PID[i]);el.classList.add('in');setTimeout(()=>el.querySelectorAll('.sgw').forEach(s=>s.classList.add('on')),80);uiSync();fd.style.opacity='0';setTimeout(()=>busy=false,300);},220);}
-window.addEventListener('wheel',e=>{if(busy)return;e.deltaY>0?go(cur+1):go(cur-1);},{passive:true});
-window.addEventListener('keydown',e=>{if(['ArrowDown','ArrowRight',' '].includes(e.key)){e.preventDefault();go(cur+1);}if(['ArrowUp','ArrowLeft'].includes(e.key)){e.preventDefault();go(cur-1);}});
+LABELS.forEach((_,i)=>{
+  const d=document.createElement('div');
+  d.className='nd'+(i===0?' on':'');
+  d.onclick=()=>go(i);
+  navEl.appendChild(d);
+});
+
+function uiSync(){
+  document.querySelectorAll('.nd').forEach((d,i)=>d.classList.toggle('on',i===cur));
+  document.getElementById('scn').textContent=
+    String(cur+1).padStart(2,'0')+' / '+String(PID.length).padStart(2,'0');
+  document.getElementById('sh').style.opacity=cur===PID.length-1?'0':'1';
+}
+
+let cp=CAMS[0].p.clone(), ct=CAMS[0].t.clone();
+let _cp=CAMS[0].p.clone(), _ct=CAMS[0].t.clone();
+
+function go(i){
+  if(busy||i===cur||i<0||i>=PID.length)return;
+  busy=true;
+  const fd=document.getElementById('fade');
+  fd.style.opacity='.85';
+  setTimeout(()=>{
+    PID.forEach(id=>{
+      const el=document.getElementById(id);
+      el.classList.remove('in');
+      el.querySelectorAll('.sgw').forEach(s=>s.classList.remove('on'));
+    });
+    cur=i;
+    cp.copy(CAMS[i].p); ct.copy(CAMS[i].t);
+    const el=document.getElementById(PID[i]);
+    el.classList.add('in');
+    setTimeout(()=>el.querySelectorAll('.sgw').forEach(s=>s.classList.add('on')),80);
+    uiSync();
+    fd.style.opacity='0';
+    setTimeout(()=>busy=false,300);
+  },220);
+}
+
+window.addEventListener('wheel',e=>{
+  if(busy)return;
+  e.deltaY>0?go(cur+1):go(cur-1);
+},{passive:true});
+window.addEventListener('keydown',e=>{
+  if(['ArrowDown','ArrowRight',' '].includes(e.key)){e.preventDefault();go(cur+1);}
+  if(['ArrowUp','ArrowLeft'].includes(e.key)){e.preventDefault();go(cur-1);}
+});
 let ty=0;
 window.addEventListener('touchstart',e=>ty=e.touches[0].clientY,{passive:true});
-window.addEventListener('touchend',e=>{const d=ty-e.changedTouches[0].clientY;if(Math.abs(d)>38){d>0?go(cur+1):go(cur-1);}},{passive:true});
+window.addEventListener('touchend',e=>{
+  const d=ty-e.changedTouches[0].clientY;
+  if(Math.abs(d)>38){d>0?go(cur+1):go(cur-1);}
+},{passive:true});
+
 const cu1=document.getElementById('cur'),cu2=document.getElementById('cur2');
-document.addEventListener('mousemove',e=>{cu1.style.left=e.clientX+'px';cu1.style.top=e.clientY+'px';setTimeout(()=>{cu2.style.left=e.clientX+'px';cu2.style.top=e.clientY+'px';},90);});
+document.addEventListener('mousemove',e=>{
+  cu1.style.left=e.clientX+'px';cu1.style.top=e.clientY+'px';
+  setTimeout(()=>{cu2.style.left=e.clientX+'px';cu2.style.top=e.clientY+'px';},90);
+});
+
 const clock=new THREE.Clock();
 function lerp3(a,b,t){a.x+=(b.x-a.x)*t;a.y+=(b.y-a.y)*t;a.z+=(b.z-a.z)*t;}
-function tick(){requestAnimationFrame(tick);const t=clock.getElapsedTime();lerp3(_cp,cp,.045);lerp3(_ct,ct,.045);CAM.position.copy(_cp);CAM.lookAt(_ct);B.rotation.y=Math.sin(t*.1)*.018;NET.children.forEach((c,i)=>{if(c.isLineSegments&&i<nPts.length)c.scale.setScalar(1+Math.sin(t*1.6+i*.8)*.12);});RE.render(SC,CAM);}
+
+function tick(){
+  requestAnimationFrame(tick);
+  const t=clock.getElapsedTime();
+  lerp3(_cp,cp,.045); lerp3(_ct,ct,.045);
+  CAM.position.copy(_cp); CAM.lookAt(_ct);
+  B.rotation.y=Math.sin(t*.1)*.018;
+  NET.children.forEach((c,i)=>{
+    if(c.isLineSegments&&i<nPts.length)c.scale.setScalar(1+Math.sin(t*1.6+i*.8)*.12);
+  });
+  RE.render(SC,CAM);
+}
 tick();
-setTimeout(()=>{document.getElementById('p0').classList.add('in');_cp.copy(CAMS[0].p);_ct.copy(CAMS[0].t);CAM.position.copy(_cp);CAM.lookAt(_ct);},100);
+
+setTimeout(()=>{
+  document.getElementById('p0').classList.add('in');
+  _cp.copy(CAMS[0].p);_ct.copy(CAMS[0].t);
+  CAM.position.copy(_cp);CAM.lookAt(_ct);
+},100);
+
+// ══ UNIFIED MOCK SWITCHER ══
+function setMock(panel, idx){
+  const counts = {p3:3, p4:3, p5:3};
+  const n = counts[panel];
+  for(let i=0;i<n;i++){
+    const el=document.getElementById(panel+'mock'+i);
+    if(el) el.style.display=i===idx?'block':'none';
+  }
+  // Update active tab buttons
+  const letters=['a','b','c'];
+  letters.forEach((l,i)=>{
+    const btn=document.getElementById('f'+panel.slice(1)+l);
+    if(btn) btn.classList.toggle('fi3-active',i===idx);
+  });
+}
+
 uiSync();
 </script>
+
 </body>
 </html>
