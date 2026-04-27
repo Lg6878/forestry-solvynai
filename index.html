@@ -68,12 +68,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;cursor:none;fon
 .ni p{font-size:.78rem;color:rgba(255,255,255,.37);line-height:1.55;}
 .ni .hl{color:#f0c96e;}
 
-/* GRID */
-.gcol{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.6rem;}
-.gitem{background:rgba(196,120,74,.06);border:1px solid rgba(196,120,74,.14);border-radius:10px;padding:.88rem .98rem;}
-.gitem h4{font-size:.86rem;font-weight:700;color:#fff;margin-bottom:.28rem;display:flex;align-items:center;gap:6px;}
-.gitem p{font-size:.75rem;color:rgba(255,255,255,.34);line-height:1.55;}
-
 /* HERO */
 #hero{text-align:center;padding:0 1.5rem;}
 .ht1{font-family:‘Noto Serif TC’,serif;font-size:clamp(2rem,4.2vw,3.4rem);font-weight:900;background:linear-gradient(135deg,#c9a84c,#f0c96e,#c9a84c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.1;margin-bottom:.35rem;}
@@ -83,6 +77,14 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;cursor:none;fon
 .bdot{width:6px;height:6px;border-radius:50%;background:#c4784a;animation:aBP 2.2s ease-in-out infinite;}
 @keyframes aBP{0%,100%{opacity:.4;}50%{opacity:1;box-shadow:0 0 6px #c4784a;}}
 .hmeta{margin-top:1rem;font-family:‘Space Mono’,monospace;font-size:.66rem;letter-spacing:.1em;color:rgba(255,255,255,.2);text-transform:uppercase;}
+
+/* SCHOOL BADGE ROW */
+.hschool-row{display:flex;align-items:center;justify-content:center;gap:.7rem;margin-bottom:1rem;}
+.hschool-badge{display:flex;align-items:center;gap:5px;padding:5px 13px;border-radius:30px;font-family:‘Noto Sans TC’,sans-serif;font-size:.75rem;font-weight:700;}
+.hschool-badge.elem{background:rgba(93,223,138,.1);border:1px solid rgba(93,223,138,.25);color:#5ddf8a;}
+.hschool-badge.jh{background:rgba(126,200,227,.1);border:1px solid rgba(126,200,227,.25);color:#7ec8e3;}
+.hschool-badge.elite{background:rgba(240,201,110,.1);border:1px solid rgba(240,201,110,.25);color:#f0c96e;}
+.hschool-sep{color:rgba(255,255,255,.2);font-size:.8rem;}
 
 /* CLOSING */
 #closing{text-align:center;max-width:570px;position:relative;background:rgba(4,2,1,.82);backdrop-filter:blur(28px);border:1px solid rgba(196,120,74,.18);border-radius:22px;padding:2.4rem 2.8rem;box-shadow:0 0 60px rgba(196,120,74,.07),inset 0 1px 0 rgba(255,255,255,.04);}
@@ -117,20 +119,18 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;cursor:none;fon
 .fi3 h4{font-size:.86rem;font-weight:700;margin-bottom:.09rem;color:#fff;}
 .fi3 p{font-size:.74rem;color:rgba(255,255,255,.34);line-height:1.45;}
 
-/* MOCK WINDOW */
+/* MOCK */
 .mock{background:rgba(12,8,4,.9);border:1px solid rgba(196,120,74,.2);border-radius:11px;overflow:hidden;width:100%;}
 .mock-bar{display:flex;align-items:center;gap:6px;padding:.54rem .82rem;background:rgba(196,120,74,.07);border-bottom:1px solid rgba(196,120,74,.1);}
 .mock-dot{width:8px;height:8px;border-radius:50%;}
-.mock-dot.r{background:#e05555;} .mock-dot.y{background:#f0c96e;} .mock-dot.g{background:#5ddf8a;}
+.mock-dot.r{background:#e05555;}.mock-dot.y{background:#f0c96e;}.mock-dot.g{background:#5ddf8a;}
 .mock-title{font-family:‘Space Mono’,monospace;font-size:.62rem;color:rgba(255,255,255,.38);margin-left:6px;letter-spacing:.08em;}
 .mock-body{padding:.92rem 1rem;display:flex;flex-direction:column;gap:.56rem;}
-
 .mock-row{display:flex;align-items:center;gap:.55rem;}
 .mock-label{font-size:.74rem;color:rgba(255,255,255,.48);width:104px;flex-shrink:0;}
 .mock-track{flex:1;height:6px;background:rgba(255,255,255,.06);border-radius:3px;overflow:hidden;}
 .mock-fill{height:100%;border-radius:3px;}
 .mock-pct{font-family:‘Space Mono’,monospace;font-size:.7rem;color:rgba(255,255,255,.5);width:36px;text-align:right;}
-
 .mock-chips{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.35rem;}
 .mock-chip{font-size:.66rem;padding:3px 10px;border-radius:20px;font-family:‘Space Mono’,monospace;}
 .mock-chip.green{background:rgba(93,223,138,.1);color:#5ddf8a;border:1px solid rgba(93,223,138,.2);}
@@ -138,23 +138,19 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;cursor:none;fon
 .mock-chip.orange{background:rgba(196,120,74,.1);color:#c4784a;border:1px solid rgba(196,120,74,.2);}
 .mock-chip.blue{background:rgba(126,200,227,.1);color:#7ec8e3;border:1px solid rgba(126,200,227,.2);}
 .mock-chip.red{background:rgba(224,85,85,.1);color:#e05555;border:1px solid rgba(224,85,85,.2);}
-
 .mock-msg{padding:.52rem .72rem;border-radius:9px;font-size:.76rem;line-height:1.6;}
 .mock-msg.user{background:rgba(196,120,74,.1);border:1px solid rgba(196,120,74,.15);color:rgba(255,255,255,.72);align-self:flex-end;max-width:86%;}
 .mock-msg.ai{background:rgba(93,223,138,.07);border:1px solid rgba(93,223,138,.12);color:rgba(255,255,255,.67);}
-.mock-msg strong{color:#5ddf8a;} .mock-msg .gd{color:#f0c96e;}
+.mock-msg strong{color:#5ddf8a;}.mock-msg .gd{color:#f0c96e;}
 .mock-input{display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:7px;padding:.42rem .72rem;margin-top:.2rem;}
 .mock-input span{font-size:.72rem;color:rgba(255,255,255,.2);}
 .mock-send{font-size:.66rem;background:rgba(196,120,74,.2);color:#c4784a;padding:3px 10px;border-radius:5px;font-family:‘Space Mono’,monospace;}
-
 .mock-q{display:flex;align-items:center;gap:.55rem;padding:.48rem .58rem;background:rgba(255,255,255,.03);border-radius:7px;border:1px solid rgba(255,255,255,.06);}
 .mock-qnum{font-family:‘Space Mono’,monospace;font-size:.7rem;color:#c4784a;flex-shrink:0;}
 .mock-qtext{font-size:.72rem;color:rgba(255,255,255,.62);flex:1;}
 .mock-score{font-family:‘Space Mono’,monospace;font-size:.7rem;flex-shrink:0;}
-.mock-score.correct{color:#5ddf8a;} .mock-score.wrong{color:#e05555;}
+.mock-score.correct{color:#5ddf8a;}.mock-score.wrong{color:#e05555;}
 .mock-feedback{font-size:.74rem;color:rgba(255,255,255,.48);background:rgba(240,201,110,.06);border:1px solid rgba(240,201,110,.1);border-radius:7px;padding:.48rem .72rem;line-height:1.55;}
-
-/* TIMELINE */
 .mock-timeline{display:flex;flex-direction:column;gap:.4rem;}
 .mock-titem{display:flex;gap:.65rem;align-items:flex-start;padding:.52rem .62rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;border-left:2px solid rgba(93,223,138,.35);}
 .mock-titem.gold-left{border-left-color:rgba(240,201,110,.45);}
@@ -166,8 +162,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;cursor:none;fon
 .mock-tbadge.green{background:rgba(93,223,138,.1);color:#5ddf8a;border:1px solid rgba(93,223,138,.2);}
 .mock-tbadge.gold{background:rgba(240,201,110,.1);color:#f0c96e;border:1px solid rgba(240,201,110,.2);}
 .mock-tbadge.blue{background:rgba(126,200,227,.1);color:#7ec8e3;border:1px solid rgba(126,200,227,.2);}
-
-/* RADAR */
 .mock-radar-wrap{display:flex;flex-direction:column;gap:.46rem;}
 .mock-radar-header{display:flex;align-items:center;justify-content:space-between;}
 .mock-radar-name{font-size:.82rem;font-weight:700;color:#fff;}
@@ -177,8 +171,6 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;cursor:none;fon
 .mock-rstat{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:6px;padding:.36rem .46rem;text-align:center;}
 .mock-rstat-v{font-family:‘Space Mono’,monospace;font-size:.84rem;color:#5ddf8a;font-weight:700;}
 .mock-rstat-l{font-size:.62rem;color:rgba(255,255,255,.3);}
-
-/* NOTIF */
 .mock-tabs{display:flex;gap:.36rem;margin-bottom:.56rem;}
 .mock-tab{font-family:‘Space Mono’,monospace;font-size:.62rem;padding:.3rem .62rem;border-radius:6px;cursor:pointer;border:1px solid rgba(255,255,255,.08);color:rgba(255,255,255,.3);transition:all .2s;}
 .mock-tab.active{background:rgba(196,120,74,.12);color:#c4784a;border-color:rgba(196,120,74,.25);}
@@ -187,14 +179,12 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;cursor:none;fon
 .mock-notif-body h5{font-size:.76rem;font-weight:700;color:rgba(255,255,255,.82);margin-bottom:.09rem;}
 .mock-notif-body p{font-size:.68rem;color:rgba(255,255,255,.34);line-height:1.45;}
 .mock-notif-time{font-family:‘Space Mono’,monospace;font-size:.58rem;color:rgba(255,255,255,.2);flex-shrink:0;margin-top:2px;}
-
-/* CAMPUS EXTRAS */
 .mock-stat-row{display:flex;gap:.52rem;}
 .mock-stat-box{flex:1;background:rgba(196,120,74,.06);border:1px solid rgba(196,120,74,.14);border-radius:9px;padding:.58rem .64rem;text-align:center;}
 .mock-stat-box.green-box{background:rgba(93,223,138,.05);border-color:rgba(93,223,138,.14);}
 .mock-stat-box.blue-box{background:rgba(126,200,227,.05);border-color:rgba(126,200,227,.14);}
 .mock-stat-num{font-family:‘Space Mono’,monospace;font-size:1.1rem;font-weight:700;color:#c4784a;line-height:1;margin-bottom:.2rem;}
-.mock-stat-num.green{color:#5ddf8a;} .mock-stat-num.blue{color:#7ec8e3;}
+.mock-stat-num.green{color:#5ddf8a;}.mock-stat-num.blue{color:#7ec8e3;}
 .mock-stat-label{font-size:.62rem;color:rgba(255,255,255,.3);}
 .mock-section-title{font-size:.66rem;font-family:‘Space Mono’,monospace;color:rgba(255,255,255,.3);letter-spacing:.1em;margin-bottom:.32rem;}
 .mock-alert{display:flex;align-items:center;gap:.52rem;padding:.44rem .62rem;border-radius:7px;border:1px solid rgba(224,85,85,.2);background:rgba(224,85,85,.06);}
@@ -208,6 +198,16 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;cursor:none;fon
 .mock-book-info h5{font-size:.74rem;font-weight:700;color:rgba(255,255,255,.8);margin-bottom:.06rem;}
 .mock-book-info p{font-size:.64rem;color:rgba(255,255,255,.3);}
 .mock-book-tag{font-family:‘Space Mono’,monospace;font-size:.58rem;padding:2px 8px;border-radius:10px;flex-shrink:0;}
+
+/* FUNNEL */
+.funnel-step{display:flex;align-items:center;gap:.7rem;padding:.5rem .65rem;border-radius:8px;border:1px solid rgba(255,255,255,.07);background:rgba(255,255,255,.03);margin-bottom:.3rem;position:relative;}
+.funnel-step::after{content:‘↓’;position:absolute;bottom:-1.05rem;left:50%;transform:translateX(-50%);font-size:.7rem;color:rgba(255,255,255,.2);}
+.funnel-step:last-child::after{display:none;}
+.funnel-num{font-family:‘Space Mono’,monospace;font-size:1.1rem;font-weight:700;min-width:48px;text-align:center;}
+.funnel-info h5{font-size:.74rem;font-weight:700;color:rgba(255,255,255,.82);margin-bottom:.05rem;}
+.funnel-info p{font-size:.64rem;color:rgba(255,255,255,.32);}
+.funnel-bar-wrap{flex:1;height:7px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden;}
+.funnel-bar{height:100%;border-radius:4px;}
 </style>
 
 </head>
@@ -217,176 +217,222 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;cursor:none;fon
 <div id="fade"></div>
 
 <div id="logo">
-  <div class="lb">🏫</div>
+  <div class="lb">🌲</div>
   <div class="lt">福瑞斯特高級中學<span>AI Solution by Solvyn AI</span></div>
 </div>
 <div id="nav"></div>
 <div id="scn">01 / 09</div>
 <div id="sh"><span>Scroll to explore</span><div class="arr"></div></div>
 
-<!-- P0 HERO -->
+<!-- ══ P0: HERO ══ -->
 
 <div class="panel pc in" id="p0">
   <div id="hero">
     <div class="tag" style="justify-content:center;margin-bottom:.7rem;">Present by Solvyn AI</div>
     <div class="ht1">AI 賦能教育管理系統</div>
-    <div class="ht1b">成為領先的 AI 標竿私立高中</div>
+    <div class="ht1b">從招生到培育，全面提升競爭力</div>
+    <div class="hschool-row">
+      <div class="hschool-badge elem">🏫 國小部</div>
+      <span class="hschool-sep">×</span>
+      <div class="hschool-badge jh">📚 國中部</div>
+      <span class="hschool-sep">×</span>
+      <div class="hschool-badge elite">⭐ 菁英計畫</div>
+    </div>
     <div class="ht2">新北市私立福瑞斯特高級中學 · 智慧校園導入解決方案</div>
     <div class="hbadge"><div class="bdot"></div>量身打造 · 全面整合 · 持續優化</div>
     <div class="hmeta">2026 / Solvyn AI Ltd.</div>
   </div>
 </div>
 
-<!-- P1 核心主張 -->
+<!-- ══ P1: 核心主張 ══ -->
 
 <div class="panel pr" id="p1">
   <div class="card">
     <div class="tag">核心主張</div>
-    <h2 class="h2">AI 的價值不在取代教學，<br>而是<em>放大福瑞斯特的優勢</em></h2>
-    <p class="bd">以多元化課程與雙語教育為根基，讓 AI 成為強化學校特色的最強後盾。</p>
+    <h2 class="h2">AI 不取代老師，<br>而是<em>放大福瑞斯特的教育優勢</em></h2>
+    <p class="bd">以全面雙語、STEAM 課程與適性揚才為根基，讓 AI 成為強化每一個教育階段的最強後盾。</p>
     <div class="sgw" id="p1s">
-      <div class="fi"><div class="fi-ic">🏫</div><div><h4>學校特色強化</h4><p>透過 AI 教育結合雙語與多元課程，強化學校特色，打造具國際視野的品牌亮點</p></div></div>
-      <div class="fi"><div class="fi-ic">🎓</div><div><h4>升學成果支持</h4><p>AI 系統化整理與深化學習歷程，讓既有教學成果更容易被累積與呈現，提升升學競爭力</p></div></div>
-      <div class="fi"><div class="fi-ic">⚙️</div><div><h4>日常運作優化</h4><p>導入 AI 優化教學與行政流程，減輕教師重複性行政負擔，讓師資專注於高品質教學</p></div></div>
+      <div class="fi"><div class="fi-ic">📈</div>
+        <div><h4>招生率提升</h4><p>AI 客服 24 小時回應家長諮詢，智慧追蹤報名漏斗，讓每一個詢問都不流失</p></div>
+      </div>
+      <div class="fi"><div class="fi-ic">🌱</div>
+        <div><h4>國小到國中完整銜接</h4><p>AI 記錄每位學生從國小部到國中部的成長軌跡，打造無縫銜接的個人化學習體驗</p></div>
+      </div>
+      <div class="fi"><div class="fi-ic">⭐</div>
+        <div><h4>菁英計畫精準輔導</h4><p>AI 協助識別適合菁英培育的學生，提供個人化強化路徑，提升競賽成績與升學成果</p></div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- P2 關鍵時機 -->
+<!-- ══ P2: 關鍵時機 ══ -->
 
 <div class="panel pl" id="p2">
   <div class="card card-wide">
     <div class="tag">關鍵時機</div>
-    <h2 class="h2">打造全台第一所<br>AI 化完全中學，<em>接軌國際舞台</em></h2>
+    <h2 class="h2">打造新北市第一所<br>全段 AI 化私立學校，<em>建立招生護城河</em></h2>
     <div class="sgw" id="p2s">
-      <div class="ni"><div class="ni-num">1</div><div><h4>108 課綱的制度紅利</h4><p>強調學習歷程的升學制度，<span class="hl">讓數位化工具能直接支援現行備審準備</span>，AI 系統與現行制度的契合度在此刻最高</p></div></div>
-      <div class="ni"><div class="ni-num">2</div><div><h4>家長期待正在快速改變</h4><p>AI 輔助學習的接受度快速提升，開始成為家長選校考量之一。<span class="hl">率先導入的學校，將率先收割家長信任紅利</span></p></div></div>
-      <div class="ni"><div class="ni-num">3</div><div><h4>先行者優勢不可逆</h4><p>AI 系統需要時間積累使用習慣與學生資料——<span class="hl">今年導入的學校，三年後已建立競爭對手難以追趕的品牌護城河</span></p></div></div>
+      <div class="ni"><div class="ni-num">1</div>
+        <div><h4>家長選校標準正在快速轉變</h4>
+          <p>雙語 + STEAM 之外，<span class="hl">AI 輔助學習已成為新世代家長評估私校的重要加分項目</span>，率先導入就率先贏得家長信任</p></div>
+      </div>
+      <div class="ni"><div class="ni-num">2</div>
+        <div><h4>國小升國中的銜接是最強黏著點</h4>
+          <p>學生資料從國小部延續到國中部，<span class="hl">AI 建立的學習歷程讓家長沒有理由轉校</span>，大幅提升留校率</p></div>
+      </div>
+      <div class="ni"><div class="ni-num">3</div>
+        <div><h4>先行者優勢會隨時間複利成長</h4>
+          <p>AI 系統需要時間積累學生數據與使用習慣——<span class="hl">今年導入的學校，三年後已建立競爭對手難以追趕的品牌護城河</span></p></div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- P3 教學輔助 -->
+<!-- ══ P3: 教學輔助系統 ══ -->
 
 <div class="panel pc" id="p3">
   <div class="p3wrap">
     <div class="p3left">
       <div class="tag">模組一 · 教學輔助系統</div>
       <h2 class="h2">讓每位老師都有<br><em>AI 教學夥伴</em></h2>
-      <p class="bd">從備課到批改，AI 全程輔助，讓教師從重複性工作中解放。</p>
+      <p class="bd">從國小到國中，備課、差異化教學、批改全程 AI 輔助，讓老師從行政負擔中解放。</p>
       <div class="sgw" id="p3s">
-        <div class="fi3 fi3-active" id="f3a" onclick="setMock('p3',0)"><div class="fi-ic">📊</div><div><h4>AI 素養課程包裝支援</h4><p>整合雙語與多元課程特色，強化品牌差異化</p></div></div>
-        <div class="fi3" id="f3b" onclick="setMock('p3',1)"><div class="fi-ic">💬</div><div><h4>個人化補強路徑建議</h4><p>根據學習狀況提供差異化補強內容與建議</p></div></div>
-        <div class="fi3" id="f3c" onclick="setMock('p3',2)"><div class="fi-ic">📝</div><div><h4>AI 自動出題與批改</h4><p>自動生成題目並即時批改，提升評量效率</p></div></div>
+        <div class="fi3 fi3-active" id="f3a" onclick="setMock('p3',0)">
+          <div class="fi-ic">📊</div><div><h4>雙語課程品質儀表板</h4><p>即時監控各年段雙語教學覆蓋率與學習成效</p></div>
+        </div>
+        <div class="fi3" id="f3b" onclick="setMock('p3',1)">
+          <div class="fi-ic">💬</div><div><h4>AI 差異化補強建議</h4><p>根據國小/國中學生程度，自動生成個人化補強路徑</p></div>
+        </div>
+        <div class="fi3" id="f3c" onclick="setMock('p3',2)">
+          <div class="fi-ic">📝</div><div><h4>AI 出題與即時批改</h4><p>自動出題、批改並分析錯題分佈，提升評量效率</p></div>
+        </div>
       </div>
     </div>
     <div class="p3right">
       <div class="mock" id="p3mock0">
-        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 課程儀表板</span></div>
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">雙語課程品質儀表板</span></div>
         <div class="mock-body">
-          <div class="mock-row"><span class="mock-label">雙語課程覆蓋率</span><div class="mock-track"><div class="mock-fill" style="width:82%;background:#5ddf8a;"></div></div><span class="mock-pct">82%</span></div>
-          <div class="mock-row"><span class="mock-label">AI 工具整合度</span><div class="mock-track"><div class="mock-fill" style="width:67%;background:#c4784a;"></div></div><span class="mock-pct">67%</span></div>
-          <div class="mock-row"><span class="mock-label">多元課程豐富度</span><div class="mock-track"><div class="mock-fill" style="width:91%;background:#f0c96e;"></div></div><span class="mock-pct">91%</span></div>
-          <div class="mock-row"><span class="mock-label">家長滿意度</span><div class="mock-track"><div class="mock-fill" style="width:78%;background:#5ddf8a;"></div></div><span class="mock-pct">78%</span></div>
-          <div class="mock-chips"><div class="mock-chip green">📈 課程品質提升</div><div class="mock-chip gold">🌐 國際接軌</div><div class="mock-chip orange">🤖 AI 整合中</div></div>
+          <div style="font-size:.68rem;color:rgba(255,255,255,.35);font-family:'Space Mono',monospace;margin-bottom:.1rem;">國小部</div>
+          <div class="mock-row"><span class="mock-label">全英教學覆蓋</span><div class="mock-track"><div class="mock-fill" style="width:88%;background:#5ddf8a;"></div></div><span class="mock-pct">88%</span></div>
+          <div class="mock-row"><span class="mock-label">外師授課時數</span><div class="mock-track"><div class="mock-fill" style="width:76%;background:#7ec8e3;"></div></div><span class="mock-pct">76%</span></div>
+          <div style="font-size:.68rem;color:rgba(255,255,255,.35);font-family:'Space Mono',monospace;margin-top:.2rem;margin-bottom:.1rem;">國中部</div>
+          <div class="mock-row"><span class="mock-label">雙語課程比例</span><div class="mock-track"><div class="mock-fill" style="width:72%;background:#f0c96e;"></div></div><span class="mock-pct">72%</span></div>
+          <div class="mock-row"><span class="mock-label">STEAM 整合度</span><div class="mock-track"><div class="mock-fill" style="width:85%;background:#5ddf8a;"></div></div><span class="mock-pct">85%</span></div>
+          <div class="mock-chips">
+            <div class="mock-chip green">📈 整體提升 +12%</div>
+            <div class="mock-chip blue">🌐 外師授課增加</div>
+            <div class="mock-chip gold">⭐ 菁英組全英授課</div>
+          </div>
         </div>
       </div>
       <div class="mock" id="p3mock1" style="display:none;">
-        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 學習顧問</span></div>
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 差異化補強建議</span></div>
         <div class="mock-body">
-          <div class="mock-msg user">小明的數學哪裡比較弱？</div>
-          <div class="mock-msg ai">📊 根據近三週測驗，小明在<strong>「函數圖形」</strong>與<strong>「不等式」</strong>正確率分別為 54% 與 61%，建議優先加強。</div>
-          <div class="mock-msg user">幫我出三題函數練習題</div>
-          <div class="mock-msg ai">✅ 已根據小明程度生成三道難度遞增練習題，並附解題提示，可直接發送給學生。</div>
+          <div class="mock-msg user">國小五年級林同學的英語哪裡需要加強？</div>
+          <div class="mock-msg ai">📊 根據近四週測驗，林同學在<strong>「聽力理解」</strong>正確率 58%，低於年段平均 71%。建議安排外師對話練習，每週兩次。</div>
+          <div class="mock-msg user">幫我設計一份本週補強計畫</div>
+          <div class="mock-msg ai">✅ 已依林同學程度生成三階段補強計畫：<strong>影片聽力 → 跟讀練習 → 口語小測</strong>，預計兩週達標。</div>
           <div class="mock-input"><span>輸入問題…</span><div class="mock-send">送出</div></div>
         </div>
       </div>
       <div class="mock" id="p3mock2" style="display:none;">
         <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 出題與批改系統</span></div>
         <div class="mock-body">
-          <div class="mock-q"><span class="mock-qnum">Q1</span><span class="mock-qtext">若 f(x) = 2x² - 3x + 1，求 f(2) 的值</span><span class="mock-score correct">✓ 3分</span></div>
-          <div class="mock-q"><span class="mock-qnum">Q2</span><span class="mock-qtext">解不等式 x² - 5x + 6 &lt; 0</span><span class="mock-score wrong">✗ 0分</span></div>
-          <div class="mock-q"><span class="mock-qnum">Q3</span><span class="mock-qtext">求直線 y=2x+1 與 y=-x+4 的交點</span><span class="mock-score correct">✓ 3分</span></div>
-          <div class="mock-feedback">💡 AI 建議：Q2 全班錯誤率 68%，建議下堂課重點複習因式分解。</div>
-          <div class="mock-chips"><div class="mock-chip green">批改完成 3/3</div><div class="mock-chip gold">平均 6/9 分</div></div>
+          <div class="mock-q"><span class="mock-qnum">Q1</span><span class="mock-qtext">The cat is ___ the box. (on/in/under)</span><span class="mock-score correct">✓ 2分</span></div>
+          <div class="mock-q"><span class="mock-qnum">Q2</span><span class="mock-qtext">She ___ (go) to school every day. 填入正確時態</span><span class="mock-score wrong">✗ 0分</span></div>
+          <div class="mock-q"><span class="mock-qnum">Q3</span><span class="mock-qtext">AMC8 計算題：若 2x + 5 = 13，則 x = ?</span><span class="mock-score correct">✓ 3分</span></div>
+          <div class="mock-feedback">💡 AI 建議：Q2 三單現在式全班錯誤率 72%，建議下節課重點說明，並搭配遊戲化練習提升記憶。</div>
+          <div class="mock-chips"><div class="mock-chip green">批改完成 3/3</div><div class="mock-chip gold">班平均 67%</div></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- P4 學習歷程 -->
+<!-- ══ P4: 學習成長歷程 ══ -->
 
 <div class="panel pl" id="p4">
   <div class="p3wrap">
     <div class="p3left">
-      <div class="tag">模組二 · 升學與學習歷程系統</div>
-      <h2 class="h2">讓每份努力都被<br><em>看見、記錄、呈現</em></h2>
-      <p class="bd">自動化學習歷程建檔，讓升學備審不再是最後一刻的手忙腳亂。</p>
+      <div class="tag">模組二 · 學生成長歷程系統</div>
+      <h2 class="h2">從國小到國中，<br>每份成長都被<em>完整記錄</em></h2>
+      <p class="bd">自動建立跨年段學習歷程，讓老師、家長、學生看見真實的成長軌跡，也讓菁英潛力被精準識別。</p>
       <div class="sgw" id="p4s">
-        <div class="fi3 fi3-active" id="f4a" onclick="setMock('p4',0)"><div class="fi-ic">📂</div><div><h4>學習歷程自動建檔整合</h4><p>自動收集課程、活動、競賽與成就，建立完整歷程檔案</p></div></div>
-        <div class="fi3" id="f4b" onclick="setMock('p4',1)"><div class="fi-ic">🗺️</div><div><h4>AI 個人化學習規劃建議</h4><p>根據目標科系推薦課程與活動，精準導航升學方向</p></div></div>
-        <div class="fi3" id="f4c" onclick="setMock('p4',2)"><div class="fi-ic">✍️</div><div><h4>AI 自傳與備審文件輔助</h4><p>智慧引導撰寫個人申請文件，提升備審品質與一致性</p></div></div>
+        <div class="fi3 fi3-active" id="f4a" onclick="setMock('p4',0)">
+          <div class="fi-ic">📂</div><div><h4>跨年段學習歷程建檔</h4><p>國小到國中無縫銜接，自動整合課程、競賽、活動與成就</p></div>
+        </div>
+        <div class="fi3" id="f4b" onclick="setMock('p4',1)">
+          <div class="fi-ic">⭐</div><div><h4>菁英潛力識別與培育</h4><p>AI 分析學習數據，主動識別適合菁英計畫的學生並推薦強化路徑</p></div>
+        </div>
+        <div class="fi3" id="f4c" onclick="setMock('p4',2)">
+          <div class="fi-ic">🎯</div><div><h4>國中升高中升學輔導</h4><p>依學生興趣與強項，提供個人化的高中選校與備審方向建議</p></div>
+        </div>
       </div>
     </div>
     <div class="p3right">
       <div class="mock" id="p4mock0">
-        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">學習歷程自動建檔系統</span></div>
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">跨年段學習歷程系統</span></div>
         <div class="mock-body">
           <div class="mock-timeline">
-            <div class="mock-titem"><span class="mock-tdate">2025.11</span><div class="mock-tcontent"><h5>全國數理奧林匹亞競賽</h5><p>個人組 · 銀牌得主 · 代表學校出賽</p><span class="mock-tbadge gold">🏅 競賽成就</span></div></div>
-            <div class="mock-titem blue-left"><span class="mock-tdate">2025.09</span><div class="mock-tcontent"><h5>雙語國際交流研習營</h5><p>英語授課 · 完成 32 小時 · 取得認證</p><span class="mock-tbadge blue">🌐 雙語課程</span></div></div>
-            <div class="mock-titem"><span class="mock-tdate">2025.07</span><div class="mock-tcontent"><h5>社區服務學習計畫</h5><p>擔任隊長 · 累計 48 小時服務時數</p><span class="mock-tbadge green">✅ 服務學習</span></div></div>
-            <div class="mock-titem gold-left"><span class="mock-tdate">2025.05</span><div class="mock-tcontent"><h5>自主學習專題：AI 倫理研究</h5><p>完成 18 週研究報告 · 指導教師評語優良</p><span class="mock-tbadge gold">📑 自主學習</span></div></div>
+            <div class="mock-titem gold-left"><span class="mock-tdate">國中二</span><div class="mock-tcontent"><h5>AMC8 國際數學競賽</h5><p>全國前 15% · 菁英數理組選手 · 積分累計中</p><span class="mock-tbadge gold">⭐ 菁英計畫</span></div></div>
+            <div class="mock-titem blue-left"><span class="mock-tdate">國中一</span><div class="mock-tcontent"><h5>英語戲劇展演 · 主角</h5><p>全英語演出 · 獲最佳表現獎 · 外師評語優良</p><span class="mock-tbadge blue">🌐 雙語特色</span></div></div>
+            <div class="mock-titem"><span class="mock-tdate">國小六</span><div class="mock-tcontent"><h5>STEAM 科學展覽專題</h5><p>隊長 · 校內第一名 · 晉級新北市複賽</p><span class="mock-tbadge green">🔬 STEAM</span></div></div>
+            <div class="mock-titem gold-left"><span class="mock-tdate">國小五</span><div class="mock-tcontent"><h5>菁英計畫入選</h5><p>數理潛力識別 · 進入國小菁英培育課程</p><span class="mock-tbadge gold">⭐ 菁英選拔</span></div></div>
           </div>
-          <div class="mock-chips"><div class="mock-chip green">已記錄 24 筆</div><div class="mock-chip gold">完整度 91%</div><div class="mock-chip blue">符合台大備審</div></div>
+          <div class="mock-chips"><div class="mock-chip green">記錄完整</div><div class="mock-chip gold">菁英指數 94</div><div class="mock-chip blue">跨段銜接順利</div></div>
         </div>
       </div>
       <div class="mock" id="p4mock1" style="display:none;">
-        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 升學路徑規劃</span></div>
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 菁英潛力識別系統</span></div>
         <div class="mock-body">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.3rem;"><span style="font-size:.76rem;color:rgba(255,255,255,.62);">目標科系：<strong style="color:#f0c96e;">國立大學 · 電機資工</strong></span><span class="mock-chip gold" style="margin-top:0;">高度匹配</span></div>
-          <div class="mock-row"><span class="mock-label">數理能力</span><div class="mock-track"><div class="mock-fill" style="width:88%;background:#5ddf8a;"></div></div><span class="mock-pct">88%</span></div>
-          <div class="mock-row"><span class="mock-label">專題研究</span><div class="mock-track"><div class="mock-fill" style="width:72%;background:#f0c96e;"></div></div><span class="mock-pct">72%</span></div>
-          <div class="mock-row"><span class="mock-label">英語能力</span><div class="mock-track"><div class="mock-fill" style="width:65%;background:#c4784a;"></div></div><span class="mock-pct">65%</span></div>
-          <div class="mock-feedback">💡 建議補強：參加一項程式設計競賽（如 APCS）以強化備審亮點，預計可提升申請成功率 23%。</div>
-          <div class="mock-chips"><div class="mock-chip green">✅ 競賽資歷充足</div><div class="mock-chip orange">⚠️ 建議補英語檢定</div></div>
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:.3rem;"><span style="font-size:.76rem;color:rgba(255,255,255,.62);">識別結果：<strong style="color:#f0c96e;">國小五年級 · 10 位潛力生</strong></span><span class="mock-chip gold" style="margin-top:0;">建議入選</span></div>
+          <div class="mock-row"><span class="mock-label">數理學習力</span><div class="mock-track"><div class="mock-fill" style="width:91%;background:#5ddf8a;"></div></div><span class="mock-pct">91%</span></div>
+          <div class="mock-row"><span class="mock-label">英語應用力</span><div class="mock-track"><div class="mock-fill" style="width:78%;background:#7ec8e3;"></div></div><span class="mock-pct">78%</span></div>
+          <div class="mock-row"><span class="mock-label">自主探索力</span><div class="mock-track"><div class="mock-fill" style="width:85%;background:#f0c96e;"></div></div><span class="mock-pct">85%</span></div>
+          <div class="mock-feedback">💡 AI 建議：張○○、林○○ 等 4 名學生數理指標突出，建議本學期優先邀請家長說明菁英計畫，轉換率預估 80%。</div>
+          <div class="mock-chips"><div class="mock-chip gold">⭐ 10 位潛力生</div><div class="mock-chip green">預估轉換 8 位</div></div>
         </div>
       </div>
       <div class="mock" id="p4mock2" style="display:none;">
-        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 備審文件輔助</span></div>
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">國中升高中輔導系統</span></div>
         <div class="mock-body">
-          <div class="mock-msg user">幫我寫自傳的開頭段落</div>
-          <div class="mock-msg ai">📝 根據你的歷程，以下是建議開頭：<br><br>「從一道數學競賽題目，到對 <strong>AI 倫理</strong>的深切思考——我的高中三年，是一場不斷<span class="gd">跨越邊界</span>的旅程…」</div>
-          <div class="mock-msg user">這段太文學了，改學術一點</div>
-          <div class="mock-msg ai">✅ 已調整風格。強調研究動機與學術脈絡，引用你的<strong>自主學習專題成果</strong>，更符合理工科系偏好。</div>
-          <div class="mock-input"><span>繼續修改或詢問…</span><div class="mock-send">送出</div></div>
+          <div class="mock-msg user">王同學適合申請哪些高中？</div>
+          <div class="mock-msg ai">📊 根據王同學的學習歷程，數理強項突出，建議優先考慮<strong>建中/北一女資優班</strong>或<strong>科學班</strong>方向，英語能力可再強化以提升競爭力。</div>
+          <div class="mock-msg user">幫我整理他的備審重點</div>
+          <div class="mock-msg ai">✅ 已彙整王同學三年成就亮點：<strong>AMC8 成績、STEAM 展覽第一名、菁英計畫資歷</strong>，並產出備審建議架構，可直接提供家長參考。</div>
+          <div class="mock-input"><span>繼續詢問…</span><div class="mock-send">送出</div></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- P5 家長互動 -->
+<!-- ══ P5: 家長互動系統 ══ -->
 
 <div class="panel pr" id="p5">
   <div class="p3wrap" style="flex-direction:row-reverse;">
     <div class="p3left">
       <div class="tag">模組三 · 家長互動系統</div>
-      <h2 class="h2">讓家長與學校<br>成為<em>真正的夥伴</em></h2>
-      <p class="bd">360度學習全紀錄，家長隨時掌握孩子的學習動態，建立深度信任。</p>
+      <h2 class="h2">讓家長成為<br>學校最強的<em>口碑大使</em></h2>
+      <p class="bd">即時掌握孩子在國小部或國中部的完整學習動態，信任感越深，口碑傳播越廣，招生越強。</p>
       <div class="sgw" id="p5s">
-        <div class="fi3 fi3-active" id="f5a" onclick="setMock('p5',0)"><div class="fi-ic">📊</div><div><h4>360° 學習雷達圖</h4><p>數據視覺化呈現學習輪廓，一圖掌握孩子全方位表現</p></div></div>
-        <div class="fi3" id="f5b" onclick="setMock('p5',1)"><div class="fi-ic">📱</div><div><h4>AI 家長端動態看板</h4><p>整合老師評語、作業與考試，即時掌握孩子動態</p></div></div>
-        <div class="fi3" id="f5c" onclick="setMock('p5',2)"><div class="fi-ic">💬</div><div><h4>AI 學習小幫手對話</h4><p>對話式介面即時解答家長對孩子學習狀況的疑問</p></div></div>
+        <div class="fi3 fi3-active" id="f5a" onclick="setMock('p5',0)">
+          <div class="fi-ic">📊</div><div><h4>360° 跨年段成長雷達</h4><p>從國小到國中一圖呈現孩子各面向成長輪廓</p></div>
+        </div>
+        <div class="fi3" id="f5b" onclick="setMock('p5',1)">
+          <div class="fi-ic">📱</div><div><h4>即時學習動態看板</h4><p>考試、作業、競賽、活動全紀錄，即時推播給家長</p></div>
+        </div>
+        <div class="fi3" id="f5c" onclick="setMock('p5',2)">
+          <div class="fi-ic">💬</div><div><h4>AI 家長諮詢小幫手</h4><p>對話式回答家長對孩子學習狀況與菁英計畫的所有疑問</p></div>
+        </div>
       </div>
     </div>
     <div class="p3right">
       <div class="mock" id="p5mock0">
-        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">360° 學習雷達圖</span></div>
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">360° 跨年段成長雷達</span></div>
         <div class="mock-body">
           <div class="mock-radar-wrap">
-            <div class="mock-radar-header"><span class="mock-radar-name">王小明 · 高二甲</span><span class="mock-radar-class">2025 / S2</span></div>
+            <div class="mock-radar-header"><span class="mock-radar-name">陳小華 · 國中一年級</span><span class="mock-radar-class">原國小部直升</span></div>
             <svg class="radar-svg" width="200" height="180" viewBox="0 0 200 180">
               <polygon points="100,18 163,54 163,126 100,162 37,126 37,54" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
               <polygon points="100,36 148,63 148,117 100,144 52,117 52,63" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
@@ -394,153 +440,174 @@ html,body{width:100%;height:100%;overflow:hidden;background:#000;cursor:none;fon
               <line x1="100" y1="18" x2="100" y2="162" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
               <line x1="163" y1="54" x2="37" y2="126" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
               <line x1="163" y1="126" x2="37" y2="54" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
-              <polygon points="100,26.6 140.4,66.6 134.8,119.6 100,138.5 66.2,118.7 64.4,64.2" fill="rgba(93,223,138,0.18)" stroke="#5ddf8a" stroke-width="1.5"/>
-              <text x="100" y="13" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.5)">數學</text>
+              <polygon points="100,24 143,62 138,122 100,140 62,118 60,60" fill="rgba(93,223,138,0.18)" stroke="#5ddf8a" stroke-width="1.5"/>
+              <text x="100" y="13" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.5)">數理</text>
               <text x="170" y="52" text-anchor="start" font-size="9" fill="rgba(255,255,255,0.5)">英語</text>
               <text x="170" y="132" text-anchor="start" font-size="9" fill="rgba(255,255,255,0.5)">科學</text>
-              <text x="100" y="176" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.5)">社課</text>
-              <text x="30" y="132" text-anchor="end" font-size="9" fill="rgba(255,255,255,0.5)">藝術</text>
+              <text x="100" y="176" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.5)">品格</text>
+              <text x="30" y="132" text-anchor="end" font-size="9" fill="rgba(255,255,255,0.5)">藝體</text>
               <text x="30" y="52" text-anchor="end" font-size="9" fill="rgba(255,255,255,0.5)">自學</text>
             </svg>
             <div class="mock-radar-stats">
-              <div class="mock-rstat"><div class="mock-rstat-v">88</div><div class="mock-rstat-l">數學</div></div>
-              <div class="mock-rstat"><div class="mock-rstat-v" style="color:#f0c96e;">65</div><div class="mock-rstat-l">英語</div></div>
-              <div class="mock-rstat"><div class="mock-rstat-v">79</div><div class="mock-rstat-l">科學</div></div>
-              <div class="mock-rstat"><div class="mock-rstat-v">82</div><div class="mock-rstat-l">社課</div></div>
-              <div class="mock-rstat"><div class="mock-rstat-v" style="color:#c4784a;">60</div><div class="mock-rstat-l">藝術</div></div>
-              <div class="mock-rstat"><div class="mock-rstat-v">72</div><div class="mock-rstat-l">自學</div></div>
+              <div class="mock-rstat"><div class="mock-rstat-v">91</div><div class="mock-rstat-l">數理</div></div>
+              <div class="mock-rstat"><div class="mock-rstat-v">82</div><div class="mock-rstat-l">英語</div></div>
+              <div class="mock-rstat"><div class="mock-rstat-v">88</div><div class="mock-rstat-l">科學</div></div>
+              <div class="mock-rstat"><div class="mock-rstat-v">85</div><div class="mock-rstat-l">品格</div></div>
+              <div class="mock-rstat"><div class="mock-rstat-v" style="color:#c4784a;">64</div><div class="mock-rstat-l">藝體</div></div>
+              <div class="mock-rstat"><div class="mock-rstat-v">79</div><div class="mock-rstat-l">自學</div></div>
             </div>
           </div>
         </div>
       </div>
       <div class="mock" id="p5mock1" style="display:none;">
-        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">家長端學習動態看板</span></div>
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">家長端即時動態看板</span></div>
         <div class="mock-body">
-          <div class="mock-tabs"><div class="mock-tab active">本週動態</div><div class="mock-tab">作業進度</div><div class="mock-tab">考試成績</div></div>
-          <div class="mock-notif"><span class="mock-notif-icon">✅</span><div class="mock-notif-body"><h5>數學小考成績出爐</h5><p>王小明本次得 87分，高於班級平均 12分，老師評語：「解題思路清晰」</p></div><span class="mock-notif-time">今天</span></div>
-          <div class="mock-notif"><span class="mock-notif-icon">📚</span><div class="mock-notif-body"><h5>英語作業已繳交</h5><p>Reading Report 已批改，得 B+。老師建議加強段落組織結構。</p></div><span class="mock-notif-time">昨天</span></div>
-          <div class="mock-notif" style="border-left:2px solid rgba(240,201,110,.4);"><span class="mock-notif-icon">🏅</span><div class="mock-notif-body"><h5>已獲選代表學校參加競賽</h5><p>恭喜！小明入選全國數理奧林匹亞初選名單，請確認出賽同意書。</p></div><span class="mock-notif-time">週一</span></div>
-          <div class="mock-chips"><div class="mock-chip green">本週出席 5/5</div><div class="mock-chip gold">作業完成率 94%</div></div>
+          <div class="mock-tabs"><div class="mock-tab active">本週動態</div><div class="mock-tab">課後照顧</div><div class="mock-tab">菁英進度</div></div>
+          <div class="mock-notif"><span class="mock-notif-icon">⭐</span><div class="mock-notif-body"><h5>菁英數理組測驗成績出爐</h5><p>陳小華本次 AMC8 模擬賽得 19/25，高於組內平均，老師評語：「解題邏輯清晰，建議挑戰難題組」</p></div><span class="mock-notif-time">今天</span></div>
+          <div class="mock-notif"><span class="mock-notif-icon">🌐</span><div class="mock-notif-body"><h5>英語口語課外師評分</h5><p>本週 Presentation 得 A-，外師建議多練習自然語調，整體進步明顯。</p></div><span class="mock-notif-time">昨天</span></div>
+          <div class="mock-notif" style="border-left:2px solid rgba(93,223,138,.4);"><span class="mock-notif-icon">🏫</span><div class="mock-notif-body"><h5>全天照顧 07:00–20:30 打卡記錄</h5><p>本週出席 5/5，課後自習室使用率 92%，數學進度超前一週。</p></div><span class="mock-notif-time">週一</span></div>
+          <div class="mock-chips"><div class="mock-chip green">本週全勤</div><div class="mock-chip gold">菁英進度超前</div></div>
         </div>
       </div>
       <div class="mock" id="p5mock2" style="display:none;">
-        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 學習小幫手</span></div>
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 家長諮詢小幫手</span></div>
         <div class="mock-body">
-          <div class="mock-msg user">小孩最近的學習弱點在哪？</div>
-          <div class="mock-msg ai">📊 根據近兩週測驗數據，小明在<strong>英語寫作</strong>與<strong>藝術鑑賞</strong>相對較弱，分別落後班平均 18% 與 22%。其他科目表現優秀。</div>
-          <div class="mock-msg user">這週有進步嗎？</div>
-          <div class="mock-msg ai">✅ 數學本週提升 <strong style="color:#5ddf8a;">+9分</strong>，科學作業完成率也從 78% 升至 94%。英語仍需關注，建議在家多鼓勵閱讀英文文章。</div>
-          <div class="mock-input"><span>詢問孩子的學習狀況…</span><div class="mock-send">送出</div></div>
+          <div class="mock-msg user">小孩適合繼續留在菁英計畫嗎？</div>
+          <div class="mock-msg ai">📊 根據陳小華近三個月的數據，數理與英語均穩定成長，菁英適配指數目前為 <strong style="color:#f0c96e;">88/100</strong>，建議繼續參與，並可考慮報名 AMC8 正式賽。</div>
+          <div class="mock-msg user">直升國中部需要辦什麼手續？</div>
+          <div class="mock-msg ai">✅ 國小直升國中的申請說明：<strong>每年 11 月開放登記</strong>，在校生享有優先保障名額。我可以幫您預約招生組說明會，方便嗎？</div>
+          <div class="mock-input"><span>詢問孩子的學習或招生問題…</span><div class="mock-send">送出</div></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- P6 校園智慧化 -->
+<!-- ══ P6: 招生提升系統 ══ -->
 
 <div class="panel pc" id="p6">
   <div class="p3wrap">
     <div class="p3left">
-      <div class="tag">模組四 · 校園智慧化與整合</div>
-      <h2 class="h2">全方位智慧校園，<br><em>從招生到安全</em>全面升級</h2>
-      <p class="bd">四大系統無縫協作，打造真正意義上的 AI 智慧校園。</p>
+      <div class="tag">模組四 · AI 招生提升系統</div>
+      <h2 class="h2">讓每一個詢問<br>都變成<em>真實的入學生</em></h2>
+      <p class="bd">從官網瀏覽到報名完成，AI 全程追蹤、即時回應、精準轉換，讓招生工作事半功倍。</p>
       <div class="sgw" id="p6s">
-        <div class="fi3 fi3-active" id="f6a" onclick="setMock('p6',0)"><div class="fi-ic">🤖</div><div><h4>官網 AI 客服 · 招生整合</h4><p>24小時即時回應，優化報名流程，提升招生轉換率</p></div></div>
-        <div class="fi3" id="f6b" onclick="setMock('p6',1)"><div class="fi-ic">📚</div><div><h4>AI 智慧圖書館</h4><p>個人化知識探索環境，提升自主學習與國際視野</p></div></div>
-        <div class="fi3" id="f6c" onclick="setMock('p6',2)"><div class="fi-ic">🛡️</div><div><h4>校園安全網</h4><p>智慧監測與即時通報，全面提升校園安全管理效率</p></div></div>
+        <div class="fi3 fi3-active" id="f6a" onclick="setMock('p6',0)">
+          <div class="fi-ic">🤖</div><div><h4>AI 招生客服 · 即時轉換</h4><p>24小時回應家長諮詢，平均 3 秒內答覆，不讓任何詢問冷掉</p></div>
+        </div>
+        <div class="fi3" id="f6b" onclick="setMock('p6',1)">
+          <div class="fi-ic">📊</div><div><h4>招生漏斗追蹤儀表板</h4><p>追蹤詢問→參觀→試讀→報名全流程，精準找出流失點</p></div>
+        </div>
+        <div class="fi3" id="f6c" onclick="setMock('p6',2)">
+          <div class="fi-ic">📚</div><div><h4>AI 智慧圖書館 · 校安系統</h4><p>個人化閱讀推薦與校園即時安全監控，全面升級校園體驗</p></div>
+        </div>
       </div>
     </div>
     <div class="p3right">
-      <!-- MOCK 0: AI客服招生 -->
+      <!-- MOCK 0: AI招生客服 -->
       <div class="mock" id="p6mock0">
         <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">官網 AI 招生客服</span></div>
         <div class="mock-body">
           <div class="mock-stat-row">
-            <div class="mock-stat-box"><div class="mock-stat-num green">247</div><div class="mock-stat-label">今日諮詢人次</div></div>
-            <div class="mock-stat-box green-box"><div class="mock-stat-num green">94%</div><div class="mock-stat-label">即時回應率</div></div>
-            <div class="mock-stat-box blue-box"><div class="mock-stat-num blue">38</div><div class="mock-stat-label">轉介報名人數</div></div>
+            <div class="mock-stat-box"><div class="mock-stat-num green">312</div><div class="mock-stat-label">本月諮詢人次</div></div>
+            <div class="mock-stat-box green-box"><div class="mock-stat-num green">96%</div><div class="mock-stat-label">即時回應率</div></div>
+            <div class="mock-stat-box blue-box"><div class="mock-stat-num blue">54</div><div class="mock-stat-label">預約參觀人數</div></div>
           </div>
-          <div class="mock-msg user">貴校有提供雙語課程嗎？招生名額還有多少？</div>
-          <div class="mock-msg ai">👋 您好！福瑞斯特目前提供<strong>全英語沉浸式課程</strong>及雙語選修班。112 學年度仍有<span class="gd">少量名額</span>，建議您預約校園參觀，讓招生組為您詳細說明！</div>
-          <div class="mock-chips"><div class="mock-chip green">🕐 平均回覆 2.3秒</div><div class="mock-chip gold">本月諮詢 +43%</div></div>
+          <div class="mock-msg user">請問國小部有全英語環境嗎？學費怎麼計算？</div>
+          <div class="mock-msg ai">👋 您好！福瑞斯特國小部採<strong>全面雙語教學</strong>，外籍教師全程參與。學費依年段不同，我可以立刻為您安排招生組專員說明，或預約<span class="gd">免費校園參觀</span>，方便嗎？</div>
+          <div class="mock-chips"><div class="mock-chip green">🕐 平均 2.8秒回覆</div><div class="mock-chip gold">本月預約 +67%</div></div>
         </div>
       </div>
-      <!-- MOCK 1: 智慧圖書館 -->
+      <!-- MOCK 1: 招生漏斗 -->
       <div class="mock" id="p6mock1" style="display:none;">
-        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 智慧圖書館</span></div>
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">招生轉換漏斗追蹤</span></div>
+        <div class="mock-body">
+          <div class="mock-section-title">本學期招生漏斗 · 國小部</div>
+          <div class="funnel-step">
+            <div class="funnel-num" style="color:#7ec8e3;">312</div>
+            <div class="funnel-info"><h5>官網詢問 / AI 客服互動</h5><p>來自社群廣告、口碑推薦、搜尋引擎</p></div>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:100%;background:#7ec8e3;opacity:.6;"></div></div>
+          </div>
+          <div class="funnel-step">
+            <div class="funnel-num" style="color:#5ddf8a;">187</div>
+            <div class="funnel-info"><h5>預約參觀 / 說明會出席</h5><p>AI 主動推播預約邀請，轉換率 60%</p></div>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:60%;background:#5ddf8a;opacity:.6;"></div></div>
+          </div>
+          <div class="funnel-step">
+            <div class="funnel-num" style="color:#f0c96e;">89</div>
+            <div class="funnel-info"><h5>試讀申請 / 入學評估</h5><p>AI 跟進未完成報名，減少流失</p></div>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:28%;background:#f0c96e;opacity:.7;"></div></div>
+          </div>
+          <div class="funnel-step">
+            <div class="funnel-num" style="color:#c4784a;">61</div>
+            <div class="funnel-info"><h5>完成報名 · 確認入學</h5><p>整體轉換率 19.6%，較去年提升 +8%</p></div>
+            <div class="funnel-bar-wrap"><div class="funnel-bar" style="width:19%;background:#c4784a;opacity:.8;"></div></div>
+          </div>
+          <div class="mock-chips"><div class="mock-chip green">整體轉換 +8%</div><div class="mock-chip gold">流失預警 28 組</div></div>
+        </div>
+      </div>
+      <!-- MOCK 2: 圖書館+校安 -->
+      <div class="mock" id="p6mock2" style="display:none;">
+        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">AI 圖書館 · 校園安全中心</span></div>
         <div class="mock-body">
           <div class="mock-stat-row">
-            <div class="mock-stat-box green-box"><div class="mock-stat-num green">1,842</div><div class="mock-stat-label">本月借閱冊次</div></div>
-            <div class="mock-stat-box blue-box"><div class="mock-stat-num blue">312</div><div class="mock-stat-label">AI 推薦閱讀</div></div>
+            <div class="mock-stat-box green-box"><div class="mock-stat-num green">全綠</div><div class="mock-stat-label">校園安全狀態</div></div>
+            <div class="mock-stat-box"><div class="mock-stat-num">876</div><div class="mock-stat-label">今日在校人數</div></div>
+            <div class="mock-stat-box blue-box"><div class="mock-stat-num blue">234</div><div class="mock-stat-label">本月圖書借閱</div></div>
           </div>
-          <div class="mock-section-title">為你推薦 · 基於學習歷程</div>
+          <div class="mock-section-title">AI 推薦閱讀 · 依年段與興趣</div>
           <div class="mock-book-row">
             <div class="mock-book-cover" style="background:linear-gradient(135deg,#5ddf8a,#3a9e62);"></div>
-            <div class="mock-book-info"><h5>The Art of Problem Solving</h5><p>適合：數學競賽備戰 · 英語閱讀</p></div>
-            <span class="mock-book-tag mock-chip green">推薦</span>
-          </div>
-          <div class="mock-book-row">
-            <div class="mock-book-cover" style="background:linear-gradient(135deg,#c4784a,#7a3a1e);"></div>
-            <div class="mock-book-info"><h5>AI 倫理與未來社會</h5><p>適合：自主學習專題延伸閱讀</p></div>
-            <span class="mock-book-tag mock-chip orange">熱門</span>
+            <div class="mock-book-info"><h5>圖解 STEAM 科學實驗 150</h5><p>推薦：國小四～六年級 · STEAM 課程延伸</p></div>
+            <span class="mock-book-tag mock-chip green">熱門</span>
           </div>
           <div class="mock-book-row">
             <div class="mock-book-cover" style="background:linear-gradient(135deg,#7ec8e3,#3a6e8c);"></div>
-            <div class="mock-book-info"><h5>The Gene: An Intimate History</h5><p>適合：生科志向 · 雙語科普閱讀</p></div>
-            <span class="mock-book-tag mock-chip blue">新書</span>
+            <div class="mock-book-info"><h5>Wonder（奇蹟男孩）英文版</h5><p>推薦：國中部 · 英語閱讀 · 品格教育</p></div>
+            <span class="mock-book-tag mock-chip blue">雙語</span>
           </div>
-        </div>
-      </div>
-      <!-- MOCK 2: 校園安全 -->
-      <div class="mock" id="p6mock2" style="display:none;">
-        <div class="mock-bar"><span class="mock-dot r"></span><span class="mock-dot y"></span><span class="mock-dot g"></span><span class="mock-title">校園安全監控中心</span></div>
-        <div class="mock-body">
-          <div class="mock-stat-row">
-            <div class="mock-stat-box green-box"><div class="mock-stat-num green">全綠</div><div class="mock-stat-label">目前校園狀態</div></div>
-            <div class="mock-stat-box"><div class="mock-stat-num">1,247</div><div class="mock-stat-label">今日在校人數</div></div>
-            <div class="mock-stat-box blue-box"><div class="mock-stat-num blue">98.6%</div><div class="mock-stat-label">出勤率</div></div>
-          </div>
-          <div class="mock-section-title">即時通報紀錄</div>
-          <div class="mock-alert green-alert"><div class="mock-alert-dot green-dot"></div><span class="mock-alert-text">08:32 · 全體師生到齊，早自習正常進行</span></div>
-          <div class="mock-alert green-alert"><div class="mock-alert-dot green-dot"></div><span class="mock-alert-text">10:15 · 第二節下課，人流監測正常</span></div>
-          <div class="mock-alert"><div class="mock-alert-dot"></div><span class="mock-alert-text">11:03 · 高一丙 陳○○ 早退，已通知家長確認</span></div>
-          <div class="mock-chips"><div class="mock-chip green">所有區域監測中</div><div class="mock-chip gold">家長通報 &lt;30秒</div></div>
+          <div class="mock-alert green-alert" style="margin-top:.1rem;"><div class="mock-alert-dot green-dot"></div><span class="mock-alert-text">14:32 · 課後照顧出席確認完畢，家長通報已發送</span></div>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- P7 導入方式 -->
+<!-- ══ P7: 導入方式 ══ -->
 
 <div class="panel pr" id="p7">
   <div class="card">
     <div class="tag">導入方式與合作彈性</div>
-    <h2 class="h2">在既有優秀基礎上，<br><em>量身打造</em>客製化方案</h2>
-    <p class="bd">我們不賣標準品，每一份方案都從深度了解學校開始。</p>
+    <h2 class="h2">從了解學校開始，<br><em>量身打造</em>每一個環節</h2>
+    <p class="bd">我們不賣套裝方案，每一步都從深度了解福瑞斯特的現況與目標開始。</p>
     <div class="sgw" id="p7s">
-      <div class="pi"><div class="pi-ic">🔍</div><div><h4>了解貴校目前的發展重點與招生方向</h4><p>深度訪談校長、行政、教師，找到最關鍵的三個痛點優先解決</p></div></div>
-      <div class="pi"><div class="pi-ic">🔗</div><div><h4>分享其他學校的 AI 應用方式與可能做法</h4><p>提供跨校成功案例，讓福瑞斯特站在巨人的肩膀上快速起步</p></div></div>
-      <div class="pi"><div class="pi-ic">📑</div><div><h4>提供初步的 AI 導入評估建議</h4><p>免費出具客製化評估報告，從需求到技術可行性一次釐清</p></div></div>
+      <div class="pi"><div class="pi-ic">🔍</div>
+        <div><h4>深度了解國小、國中部現況與招生痛點</h4><p>訪談校長、教師、行政，找出三個最值得優先解決的問題</p></div>
+      </div>
+      <div class="pi"><div class="pi-ic">🔗</div>
+        <div><h4>分享同類型學校的 AI 招生與教學成果</h4><p>提供可參考的跨校案例，讓福瑞斯特站在前人經驗上快速出發</p></div>
+      </div>
+      <div class="pi"><div class="pi-ic">📑</div>
+        <div><h4>免費提供初步 AI 導入評估建議書</h4><p>從需求分析到技術可行性一次釐清，不承諾做不到的事</p></div>
+      </div>
     </div>
   </div>
 </div>
 
-<!-- P8 結語 -->
+<!-- ══ P8: 結語 ══ -->
 
 <div class="panel pc" id="p8">
   <div id="closing">
     <div class="cg"></div>
     <div class="tag" style="justify-content:center;">Get in Touch</div>
-    <div class="ch">教育是長遠的事，<br>我們選擇與福瑞斯特<br><span class="gd">一起走這段路</span></div>
-    <p class="csub">每一所學校都有獨特的文化與節奏，<br>我們在乎的是與您一起走得長遠。</p>
+    <div class="ch">每個孩子都值得<br>被看見、被培育，<br><span class="gd">我們一起做到這件事</span></div>
+    <p class="csub">福瑞斯特在做的事情本就不容易，<br>我們想用 AI 讓這份努力被更多家長看見。</p>
     <div class="cdiv"></div>
-    <div class="cline">從第一次對話開始，我們就是同一個團隊</div>
-    <div class="cline">您的學生成長，是我們共同的成果</div>
+    <div class="cline">從國小到國中，AI 陪伴每一段成長</div>
+    <div class="cline">招生率提升，是我們共同的目標</div>
     <div class="cdiv"></div>
     <div class="ccontact"><strong>Solvyn AI Ltd.</strong><br>新北市三重區 重新路5段609巷18號7樓之5<br>info@solvynai.com</div>
-    <div class="csig">Forestry High School × Solvyn AI · 2026</div>
+    <div class="csig">Forestry K–9 School × Solvyn AI · 2026</div>
   </div>
 </div>
 
@@ -556,7 +623,7 @@ window.addEventListener('resize',()=>{RE.setSize(innerWidth,innerHeight);CAM.asp
 function edgeLine(geo,color,opacity=1){return new THREE.LineSegments(new THREE.EdgesGeometry(geo),new THREE.LineBasicMaterial({color,transparent:opacity<1,opacity}));}
 function ebox(w,h,d,color,op=1){return edgeLine(new THREE.BoxGeometry(w,h,d),color,op);}
 function at(m,x,y,z){m.position.set(x,y,z);return m;}
-const C={brick:0xc4784a,wall:0xd4cfc8,glass:0x7ec8e3,grass:0x3a7025,tree:0x3a6e22,trunk:0x7a4820,gold:0xf0c96e,green:0x5ddf8a,node:0xc4784a};
+const C={brick:0xc4784a,wall:0xd4cfc8,glass:0x7ec8e3,grass:0x3a7025,tree:0x3a6e22,trunk:0x7a4820,node:0xc4784a};
 const gMat=new THREE.LineBasicMaterial({color:0x1e1408,transparent:true,opacity:.4});
 for(let i=-24;i<=24;i+=4){SC.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(i,0,-24),new THREE.Vector3(i,0,24)]),gMat));SC.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-24,0,i),new THREE.Vector3(24,0,i)]),gMat));}
 const B=new THREE.Group();SC.add(B);
@@ -566,8 +633,8 @@ B.add(wing(14,3,0,-3.5));B.add(wing(3,10,-5.5,0));B.add(wing(3,7,5.5,-1.5));
 function stairBox(x,y,z,w,h){const g=new THREE.Group();g.add(ebox(w,h,w,C.wall,.9));g.add(at(ebox(w+.04,.12,w+.04,C.brick,.8),0,h/2+.06,0));g.position.set(x,y,z);return g;}
 B.add(stairBox(-1.5,TH+.9,-3.5,2.4,1.8));B.add(stairBox(3.5,TH+.7,-3.5,1.8,1.4));
 const ent=new THREE.Group();ent.add(at(ebox(4.5,.16,1.8,C.wall,.85),0,0,0));ent.add(at(ebox(.16,2.4,.16,C.wall,.8),-1.8,-1.2,.8));ent.add(at(ebox(.16,2.4,.16,C.wall,.8),1.8,-1.2,.8));ent.add(at(ebox(3.2,2.4,.07,C.glass,.6),0,-1.2,.85));ent.position.set(0,TH*.33,7.4);B.add(ent);
-B.add(at(ebox(8,.02,8,C.grass,.3),0,.01,1.5));
-function tree(x,z,r=1.1){const g=new THREE.Group();g.add(at(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.CylinderGeometry(.1,.14,.9,4)),new THREE.LineBasicMaterial({color:C.trunk,transparent:true,opacity:.65})),0,.45,0));g.add(at(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(r,1)),new THREE.LineBasicMaterial({color:C.tree,transparent:true,opacity:.72})),0,.9+r,0));g.position.set(x,0,z);return g;}
+B.add(at(ebox(8,.02,8,new THREE.Color(0x3a7025),.3),0,.01,1.5));
+function tree(x,z,r=1.1){const g=new THREE.Group();g.add(at(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.CylinderGeometry(.1,.14,.9,4)),new THREE.LineBasicMaterial({color:0x7a4820,transparent:true,opacity:.65})),0,.45,0));g.add(at(new THREE.LineSegments(new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(r,1)),new THREE.LineBasicMaterial({color:0x3a6e22,transparent:true,opacity:.72})),0,.9+r,0));g.position.set(x,0,z);return g;}
 [[-2.5,-1],[-1.2,-1.8],[.2,-1.3],[1.4,-.8],[-2.5,.5],[-1.2,.2],[.2,.6],[1.4,1.1],[-2.5,2.2],[-1.1,2],[.4,2.3]].forEach(([x,z])=>B.add(tree(x,z,1.0)));
 [[-9,-4],[-9.5,.5],[-9,4.5],[9,-3],[9.5,1],[9,5],[-3,9.5],[1,10],[5,9.5]].forEach(([x,z])=>SC.add(tree(x,z,1.35)));
 const NET=new THREE.Group();SC.add(NET);
@@ -589,7 +656,7 @@ const CAMS=[
   {p:new THREE.Vector3(0,28,8),t:new THREE.Vector3(0,0,0)},
 ];
 const PID=['p0','p1','p2','p3','p4','p5','p6','p7','p8'];
-const LABELS=['開場','核心主張','關鍵時機','教學輔助','學習歷程','家長互動','校園智慧化','導入方式','結語'];
+const LABELS=['開場','核心主張','關鍵時機','教學輔助','成長歷程','家長互動','AI 招生','導入方式','結語'];
 let cur=0,busy=false;
 const navEl=document.getElementById('nav');
 LABELS.forEach((_,i)=>{const d=document.createElement('div');d.className='nd'+(i===0?' on':'');d.onclick=()=>go(i);navEl.appendChild(d);});
